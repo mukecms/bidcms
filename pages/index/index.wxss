@@ -1,0 +1,95 @@
+.members_head {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+    border: 1px solid #e7e7e7;
+    overflow: hidden;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.members_head .mobile_headertop {
+    text-align: center;
+    padding: 15px 0 0;
+}
+.members_head .mobile_headertop .head_pic {
+    display: inline-block;
+    background: rgba(255,255,255,.6);
+    border-radius: 50%;
+    padding: 3px;
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+}
+.members_head .mobile_headertop img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.members_head .mobile_headertop .head_title {
+    background: rgba(0,0,0,.2);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 10px;
+	margin-top: 6px;
+}
+.members_head .mobile_headerbot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    width: 100%;
+}
+.members_head .mobile_headerbot .active {
+    border-bottom: solid 2px #d62422;
+}
+.members_head .mobile_headerbot .tagli {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 4px 0;
+	color:#fff;
+}
+.members_head .mobile_headerbot .taga{
+    display: block;
+    color: #fff;
+    line-height: 18px;
+    margin-top: 2px;
+	text-align:center;
+}
+.members_head .mobile_headerbot .tagspan {
+	display: block;
+	margin:auto;
+}
+.list{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #FFF; 
+  font-size: 16px;
+  white-space: nowrap;
+  height:90rpx;
+  line-height: 77rpx;
+}
+.list .item {
+  text-align: center;
+  margin:0 36rpx;
+  display: inline-block;
+}
+.list .action {
+  border-bottom: 2px solid #F5B223;
+  color:#F5B223;
+}
+.audio_area {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin: 0px 1px 0px 0;
+    font-size: 0;
+    position: relative;
+    font-weight: 400;
+    text-decoration: none;
+	background-size:contain;
+	text-align:center;
+}

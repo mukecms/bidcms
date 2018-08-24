@@ -1,0 +1,12 @@
+<view class="weui-pay">
+        <view class="weui-pay-inner">
+            <view class="weui-pay-title">付款金额(元)</view>
+            <view class="weui-pay-input"> <text class="weui-pay-strong">￥</text>
+                <input type="number" id="money" bindinput="changAmount" class="weui-pay-inputs" placeholder="请输入金额"/></view>
+            <view class="weui-pay-intro">向服务员询问支付金额</view>
+        </view>
+        <view class="weui-pay-info">支付金额给店铺</view>
+        <view class="weui-pay-btn">
+            <view href="javascript:;" bindtap="pay" class="weui_btn weui_btn_primary">立即支付</view>
+        </view>
+</view>

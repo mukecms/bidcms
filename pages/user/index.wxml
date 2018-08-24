@@ -1,0 +1,12 @@
+<import src="/pages/template/user.wxml"/>
+<block wx:for="{{pages.PModules}}" wx:for-item="item" wx:for-index="index" wx:key="">
+	<template is="tpl_diy_con_type{{item.type}}" data="{{...item,isShow,userInfo}}"/>
+</block>
+<!--底部 begin-->
+<import src="/pages/template/bottom.wxml"/>
+<template is="bottom"/>
+<!--底部 end-->
+<!--底部 begin-->
+<import src="/pages/template/footer.wxml"/>
+<template is="footer" data="{{ footerNav }}"/>
+<!--底部 end-->

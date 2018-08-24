@@ -1,0 +1,19 @@
+<template name="bottom">
+
+<view class="members_bottom" style="margin-bottom:4rem;clear:both;">
+	<view class="bidcms-nav" style="display: flex;justify-content: center;">
+		<navigator style="margin-right:0.5rem;" open-type="reLaunch" class="taga" url="/pages/index/index">商城首页</navigator>
+		<navigator style="margin-right:0.5rem;" class="taga" url="/pages/list/index">所有商品</navigator>
+		<navigator style="margin-right:0.5rem;" class="taga" url="/pages/user/index">会员中心</navigator>
+		<navigator class="taga" url="/pages/shoppingcar/index">购物车</navigator>
+	</view>
+    <view style="font-size:0.7rem;color:#b3b3b3;">
+		<text style="display:block">All Rights Reserved 版权所有</text>
+		<text>技术支持： Bidcms开源分销</text>
+	</view>
+	<view class="bidcms-content" style="background-image:url(//shop.bidcms.com/store/statics/images/copyright1.png);background-size:6rem 2rem;background-repeat:no-repeat;background-position:3rem center;text-align:left;margin:auto;width:10rem;height:3rem;">
+		<image src="//shop.bidcms.com/store/statics/images/logo-m.png" style="width:3rem;height:3rem;"></image>
+	</view>
+</view>
+
+</template>

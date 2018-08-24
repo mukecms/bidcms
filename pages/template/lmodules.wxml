@@ -1,0 +1,592 @@
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- 富文本-->
+<template name="tpl_diy_con_1">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<block wx:for="{{wxParseData[id].nodes}}" wx:for-item="item" wx:key="">
+				<template is="wxParse0" data="{{item}}" />
+			</block>
+		</view>
+	</view>
+</template>
+<!-- 商品标题 start-->
+<template name="tpl_diy_con_2">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="members_special {{ content.direction }} titlestyle{{content.style || 0}}">
+				<view class="tagh2 j-title">{{ content.title }}</view>
+			</view>
+		</view>
+	</view>
+</template>
+<!-- type2 title end-->
+<template name="tpl_diy_con_3">
+	<view class="members_con" data-type="{{type}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="goods-list clearfix col{{content.goodslist.length}}" data-type="{{type}}" data-id="{{id}}">
+			  <block wx:for-item="item" wx:for="{{content.goodslist}}" wx:key="">
+			  <view bindtap="goUrl" class="taga goods-item" data-url="{{item.link}}">
+				<view class="goods-thumb"><image src="{{item.pic}}" alt="" mode="widthFix"></image></view>
+				<view class="goods-name plr26 text-elli">{{item.title}}</view>
+				<view class="goods-price clearfix plr26">
+					<view class="oprice">￥{{item.original_price}}</view><view class="price">{{content.priceTips}}￥<text>{{item.price}}</text></view>
+				</view>
+			  </view>
+			  </block>
+			</view>
+		</view>
+	</view>
+</template>
+<!-- type3 title end-->
+
+<template name="tpl_diy_con_4">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			
+			<block wx:if="{{content.layout==1}}">
+				<block wx:if="{{content.goodstyle==1}}">
+				<view class="members_goodspic">
+					
+					<block wx:if="{{content.goodslist.length>0}}">
+						<block wx:for="{{content.goodslist}}" wx:for-item="goods" wx:for-index="index" wx:key>
+							<view class="b_mingoods">
+								<view class="b_mingoods_wrapper">
+									<view class="taga" bindtap="goUrl" data-url="{{ goods.link }}">
+										<image  src="{{ goods.pic }}" style="width:100%;" mode="widthFix"></image>
+									</view>
+									<block wx:if="{{content.showIco || content.showPrice}}">
+										<view wx:if="{{content.showName == 1||content.showName === undefined}}" class="goods-title {{content.titleLine == 1?'multiLine':''}}">{{ goods.title }}</view>
+										<view class="goods-price"><text class="oprice">￥{{ goods.original_price}}</text></view>
+									</block>
+									<view class="goods-price {{content.priceBold==0?'fwt_normal':''}} fl"><text class="price"><text class="smallsize">￥</text>{{ goods.price}}</text></view>
+									<view class="selled-num fr"><text>{{goods.sale_num}}</text>件已售</view>
+								</view>
+							</view>
+						</block>
+					</block>
+					
+				</view>
+				</block>
+				<block wx:elif="{{content.goodstyle==2}}">
+				<view class="members_goodspic">
+					<view class="goodstyle2">
+					<block wx:if="{{content.goodslist.length>0}}">
+						<block wx:for="{{content.goodslist}}" wx:for-item="goods" wx:for-index="index" wx:key>
+							<view class="b_mingoods">
+								<view class="b_mingoods_wrapper">
+									<view class="taga" bindtap="goUrl" data-url="{{ goods.link }}">
+										<image  src="{{ goods.pic }}" style="width:100%" mode="widthFix"></image>
+									</view>
+									<block wx:if="{{content.showIco || content.showPrice}}">
+										<view wx:if="{{content.showName == 1||content.showName === undefined}}" class="goods-title {{content.titleLine == 1?'multiLine':''}}">{{ goods.title }}</view>
+										<view class="selled-num">已售：{{goods.sale_num}}</view>
+										<view class="goods-price"><text class="oprice">￥{{ goods.original_price}}</text></view>
+									</block>
+									<view class="goods-price {{content.priceBold==0?'fwt_normal':''}}"><text class="price {{content.priceBold==0?'fwt_normal':''}}">￥{{ goods.price}}</text></view>
+									<view bindtap="goUrl" data-url="" class="taga addcart"></view>
+								</view>
+							</view>
+						</block>
+					</block>
+					</view>
+				</view>
+				</block>
+				<block wx:elif="{{content.goodstyle==3}}">
+				<view class="members_goodspic">
+					
+					<block wx:if="{{content.goodslist.length>0}}">
+						<block wx:for="{{content.goodslist}}" wx:for-item="goods" wx:for-index="index" wx:key>
+							<view class="b_mingoods">
+								<view class="b_mingoods_wrapper">
+									<view class="taga" bindtap="goUrl" data-url="{{ goods.link }}">
+										<image  src="{{ goods.pic }}" style="width:100%" mode="widthFix"></image>
+									</view>
+									<block wx:if="{{content.showIco || content.showPrice}}">
+										<view wx:if="{{content.showName == 1||content.showName === undefined}}" class="goods-title {{content.titleLine == 1?'multiLine':''}}">{{ goods.title }}</view>
+										<view class="goods-price"><text class="oprice">￥{{ goods.original_price}}</text></view>
+									</block>
+									<view class="goods-price">
+										<view class="price {{content.priceBold==0?'fwt_normal':''}} fl">￥{{ goods.price}}</view>
+										<view class="selled-num fr"><text>{{goods.sale_num}}</text>件已售</view>
+									</view>
+									<view bindtap="goUrl" data-url="{{ goods.link }}" class="taga goods-btn">{{content.goodstxt}}</view>
+								</view>
+							</view>
+						</block>
+					</block>
+					
+				</view>
+				</block>
+			</block>
+			<block wx:elif="{{content.layout==2}}">
+				<block wx:if="{{content.layoutstyles==1}}">
+				<view class="members_goodspic" style="margin-top:{{content.modulePadding}}px;margin-bottom:{{content.modulePadding}}px;">
+					
+					<block wx:if="{{content.goodslist.length>0}}">
+						<block wx:for="{{content.goodslist}}" wx:for-item="goods">
+							<view class="biggoods">
+								<view bindtap="goUrl" class="goodsimg" data-url="{{ goods.link }}">
+									<image  src="{{ goods.pic }}" style="width:100%"  mode="widthFix"></image>
+									<view class="selled-num" wx:if="{{ content.sale_num > 0}}">已售：{{goods.sale_num}}</view>
+								</view>
+								<view class="goods-name rename clearfix">
+									<view bindtap="goUrl" wx:if="{{content.showName == 1||content.showName === undefined}}" data-url="{{ goods.link }}" class="{{content.titleLine == 1?'multiLine':''}}">{{ goods.title }}</view>
+									<view class="goods-price" wx:if="{{content.showPrice}}">
+										<text class="price">￥{{ goods.price}}</text>   
+										<text class="oprice">￥{{ goods.original_price}}</text>
+									</view>
+								</view>
+							</view>
+						</block>
+					</block>
+					
+				</view>
+				</block>
+				<block wx:elif="{{content.layoutstyles==2}}">
+				<view class="members_goodspic layoutstyles2" style="margin-top:{{content.modulePadding}}px;margin-bottom:{{content.modulePadding}}px;">
+					
+					<block wx:if="{{content.goodslist.length}}">
+						<block wx:for="{{content.goodslist}}" wx:for-item="goods" wx:key="">
+							<view class="lists_goods">
+								<view bindtap="goUrl" class="taga goodsimg" data-url="{{ goods.link }}">
+									<image  src="{{ goods.pic }}" style="width:100%"  mode="widthFix"></image>
+								</view>
+								<view class="goods-name">
+									<view bindtap="goUrl" wx:if="{{content.showName == 1||content.showName === undefined}}" data-url="{{ goods.link }}" class="taga multiLine">{{ goods.title }}</view>
+									<view class="goods-price">
+										<view class="oprice">￥{{ goods.original_price}}</view>
+									</view>
+									<view class="goods-price">
+										<text class="price" wx:if="{{content.showPrice}}">￥{{ goods.price}}</text>
+										<text wx:if="{{ content.sale_num > 0}}" class="selled-num fr">已售：{{goods.sale_num}}</text>
+									</view>
+									
+								</view>
+							</view>
+						</block>
+					</block>
+					
+				</view>
+				</block>
+			</block>
+		</view>
+	</view>
+</template>
+<!-- type4 goods end-->
+
+<template name="tpl_diy_con_6">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="members_search">
+				<input type="text" value="" bindinput="bindKeywordInput" placeholder="商品搜索：请输入商品关键字"/>
+				<image class="search-btn" bindtap="keywordSearch" src="//shop.bidcms.com/store/statics/images/hui3.png"></image>
+			</view>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_7">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="members_nav2">
+				<block wx:if="{{content.dataset.length>0}}">
+					<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="">
+						<view class="navurl" wx:if="{{item.linkType}}"><view bindtap="goUrl" data-url="{{ item.link }}" class="taga">{{ item.showtitle }}</view><text></text></view>
+						<view class="navurl" wx:else><view bindtap="goUrl" data-url="#" class="taga">请添加导航链接</view><text></text></view>
+					</block>
+				</block>
+				<block wx:else>
+					<view class="navurl"><view bindtap="goUrl" data-url="#" class="taga">请添加导航链接</view><text></text></view>
+				</block>
+			</view>
+		</view>
+	</view>
+</template>
+<!-- 首页图标导航template begin-->
+<template name="tpl_diy_con_8">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<block wx:if="{{content.layout==1}}">
+				<block wx:if="{{content.layout1_style==1}}">
+					<view class="diy-imgNav col{{ content.dataset.length }} clearfix">
+						<block wx:if="{{content.dataset.length>0}}">
+							<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+						        <view bindtap="goUrl" data-url="{{ item.link }}" class="taga imgNav-img bdbox" style="background-image: url({{ item.pic }});background-size:{{content.imageScale}}%">
+						            <view wx:if="{{item.showtitle.length}}" class="info bdbox" style="background-color:{{ item.titleBackgroundColor?item.titleBackgroundColor:'#FE9303'}}">{{item.showtitle}}</view>
+						        </view>
+							</block>
+						</block>
+				    </view>
+				</block>
+				<block wx:elif="{{content.layout1_style==2}}">
+					<view class="diy-imgNav-layout1-style2 clearfix" wx:if="{{content.dataset.length>0}}">
+						<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+							<view bindtap="goUrl" style="display:flex;width:49.3%;padding:2%;float:left;background-color:#fff;" data-url="{{ item.link }}" class="taga diy-imgNav-item bdbox">
+								<view style="width:21.6%;padding-top:21.6%;background-image:url({{ item.pic }});backgorund-position:center;background-repeat:no-repeat;background-size:{{content.imageScale}}%"></view>
+								<view style="width:75%;display:inline-block;vertical-align: middle;font-size:1rem;" wx:if="{{item.showtitle.length>0}}" class="nav-txt fl">{{item.showtitle}}</view>
+							</view>
+						</block>
+				    </view>
+				</block>
+			</block>
+			<block wx:else>
+				<view class="diy-imgNav-adaptImg col{{ content.dataset.length }} clearfix">
+					<block wx:if="{{content.dataset.length>0}}">
+						<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+							<view bindtap="goUrl" style="text-align:center;" data-url="{{ item.link }}" class="taga bdbox">
+								<image src="{{ item.pic }}" class="photo-bg" style="width:{{content.imageScale}}%" mode="widthFix"></image>
+								<view wx:if="{{item.showtitle.length>0}}" class="nav-txt">{{item.showtitle}}</view>
+							</view>
+						</block>
+					</block>
+			    </view>
+			</block>
+		</view>
+	</view>
+</template>
+
+
+<template name="tpl_diy_con_9">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+				<block wx:if="{{content.showType==1}}">
+					<swiper class="lunbo" id="lunbo" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+						<block wx:if="{{content.dataset.length>0}}">
+							<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+								<swiper-item>
+								<view bindtap="goUrl" data-url="{{ item.link }}" title="{{ item.showtitle }}">
+								<image mode="widthFix" src="{{item.pic}}" id="{{item.cid}}" class="slide-image" />
+								</view>
+								</swiper-item>
+							</block>
+						</block>
+						<block wx:else>
+							<view bindtap="goUrl" data-url="" class="taga"><image src="//store.bidcms.com/statics/images/diy/imgad.jpg" style="width:100%" mode="widthFix"/></view>
+						</block>
+					</swiper>
+				</block>
+				<block wx:else>
+
+				<view class="members_imgad">
+						<block wx:if="{{content.dataset.length>0}}">
+							<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+								<view style="margin-bottom:{{content.margin}}px;">
+									<view bindtap="goUrl" data-url="{{ item.link }}" title="{{ item.showtitle }}"  class="taga">
+											<image wx:if="{{item.pic!=''}}" src="{{ item.pic }}" style="width:100%"  mode="widthFix"/>
+											<image wx:else src="//store.bidcms.com/statics/images/diy/imgad.jpg" style="width:100%"  mode="widthFix"/>
+									</view>
+								</view>
+							</block>
+						</block><block wx:else>
+							<view><image src="//store.bidcms.com/statics/images/diy/imgad.jpg" style="width:100%"  mode="widthFix"/></view>
+						</block>
+				</view>
+				</block>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_10">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="custom-line-wrap"><text class="custom-line"></text></view>
+	</view>
+</template>
+<template name="tpl_diy_con_11">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="custom-space" style="height:{{content.height}}px;"></view>
+	</view>
+</template>
+<template name="tpl_diy_con_12">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<scroll-view scroll-x="ture" class="modulePadding" style="width: 100%;padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			
+				<view class="homeCnavbox swiper-container" wx:if="{{content.style == 1}}" style="height:50px;">
+					<view class="swiper-wrapper topnav clearfix">
+						<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="">
+							<view class="swiper-slide liwid{{content.dataset.length }}" style="width:24%;margin-right:{{ content.marginstyle}}px;background-color:{{ item.bgColor }};">
+								<view bindtap="goUrl" data-url="{{ item.link }}" class="taga colblue">
+									<image src="{{ item.pic }}" style="width:20px;height:20px;margin:auto;"/>
+									<view style="color:{{item.fotColor}}">{{ item.showtitle }}</view>
+								</view>
+							</view>
+						</block>				
+					</view>
+				</view>
+				<view wx:else class="homeCnavbox swiper-container" style="height:40.4rem;line-height:40.4rem;">
+					<view class="swiper-wrapper topnav clearfix" style="height:40.4rem;line-height:40.4rem;width:24%;">
+						<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="">
+							<view class="swiper-slide liwid{{content.dataset.length }}" style="height:40.4rem;line-height:40.4rem;margin-right:{{ content.marginstyle }}px;background-color:{{ item.bgColor }};">
+									<view style="color:{{item.fotColor}};">{{ item.showtitle }}</view>
+							</view>
+						</block>				
+					</view>
+				</view>
+		</scroll-view>
+	</view>
+</template>
+<!-- type 13 board start -->
+<template name="tpl_diy_con_13">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<block wx:if="{{content.version==2}}" >
+			<block wx:if="{{content.layout==0}}" >
+				<view class="diy-showcase col2">
+					<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+					  <view bindtap="goUrl" data-url="{{item.link}}" class="taga con-img bdbox img-{{index+1}}" style="background-image:url({{item.pic}})">	
+							<text class="info bdbox" wx:if="{{item.showTitle==1}}">{{item.title}}</text>
+					  </view>
+					</block>
+				 </view>
+			</block>
+			<block wx:elif="{{content.layout==1}}" >
+				 <view class="diy-showcase col3 clearfix" wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+						<view bindtap="goUrl" data-url="{{item.link}}" class="taga con-img bdbox" style="background-image:url({{item.pic}})">
+							 <text class="info bdbox" wx:if="{{item.showTitle==1}}">{{item.title}}</text>
+						</view>
+				  </view>
+			  </block>
+			</block>
+			<block wx:else>
+				<block wx:if="{{content.layout==0}}" >
+					<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+					<view bindtap="goUrl" data-url="{{item.link}}" class="taga board{{content.dataset.length}} {{index == 0?'big_board':'small_board'}}">
+							<image src="{{item.pic}}" mode="widthFix"></image>
+					</view>
+					</block>
+				</block>
+				<block wx:if="{{content.layout==1}}">
+					<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+					<view bindtap="goUrl" data-url="{{item.link}}" class="taga board{{content.dataset.length}}">
+							<image src="{{item.pic}}" mode="widthFix"></image>
+					</view>
+					</block>
+				</block>
+			</block>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_14">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<video id="myVideo" src="{{content.website}}" style="width:100%;" controls poster="{{content.pic!=''?content.pic:''}}"></video>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_15">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding audio_area" style="padding-top:{{content.modulePadding}}px;background-image:url('{{content.bgsrc}}');">
+			<audio poster="{{content.imgsrc}}" name="{{content.title}}" author="{{content.author}}" src="{{content.audiosrc}}" controls loop mode="widthFix"></audio>
+		</view>
+	</view>
+</template>
+<!--公告-->
+<template name="tpl_diy_con_16">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view style="overflow: hidden;background-color:{{ content.bgColor!=''?content.bgColor:'#ffc' }};">
+					<view class="{{content.strLength > 18?'tagmarquee':''}}" style="color: #ffb432;"><text class="content {{ content.fontSize }}">公告：{{ content.showtitle }}</text></view>
+	 				
+			</view>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_17">
+	<views class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<views class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<views class="members_classify layoutstyle{{content.layout}}">
+				<views class="swiper-container" >
+					<view class="clearfix">
+						<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+						<view class="swiper-slide">
+							<view bindtap="goUrl" href="{{ item.link }}" class="taga colblue" style="background-color:{{ item.bgColor }};">
+								<text class="tagh3" style="color:{{item.fotColor}};">{{ item.showtitle }}</text>
+							</view>
+						</view>
+						</block>				
+					</view>
+				</views>
+			</views>
+		</views>
+	</views>
+</template>
+<!-- type18 wx_compose start-->
+<template name="tpl_diy_con_18">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<block wx:for="{{wxParseData[id].nodes}}" wx:for-item="item" wx:key="">
+				<template is="wxParse0" data="{{item}}" />
+			</block>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_19" data-id="{{id}}">
+	<view class="members_con" data-type="{{type}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="mod_goods_list">
+				<scroll-view scroll-x="ture"  style="width: 100%" class="list">
+					<block wx:for="{{content.goodslist}}" wx:for-item="goods" wx:for-index="index" wx:key="id">
+							<view class="item {{index==currentIndex?'action':''}}" data-id="{{index}}" bindtap="getTab">{{goods.tabtitle}}</view>
+					</block>
+				</scroll-view>
+
+				<view class="members_goodspic">
+					<block wx:for="{{content.goodslist}}" wx:for-item="item" wx:for-index="i" wx:key="id">
+					<view class="goodstyle2" hidden="{{currentIndex!=i}}">
+
+						<block wx:for="{{item.goods}}" wx:for-item="goods" wx:for-index="index" wx:key>
+							<view class="b_mingoods">
+								<view class="b_mingoods_wrapper">
+									<view class="taga" bindtap="goUrl" data-url="/pages/detail/index?id={{goods.item_id}}">
+										<image  src="{{ goods.pic }}" style="width:100%;" mode="widthFix"></image>
+									</view>
+									<block wx:if="{{content.showIco || content.showPrice}}">
+										<view wx:if="{{content.showName == 1||content.showName === undefined}}" class="goods-title {{content.titleLine == 1?'multiLine':''}}">{{ goods.title }}</view>
+										<view class="selled-num">已售：{{goods.sale_num}}</view>
+										<view class="goods-price"><text class="oprice">￥{{ goods.original_price}}</text></view>
+									</block>
+									<view class="goods-price {{content.priceBold==0?'fwt_normal':''}}"><text class="price {{content.priceBold==0?'fwt_normal':''}}">￥{{ goods.price}}</text></view>
+									<view bindtap="goUrl" data-url="" class="taga addcart"></view>
+								</view>
+							</view>
+						</block>
+
+					</view>
+					</block>
+				</view>
+
+			</view>
+		</view>
+	</view>
+</template>
+<!-- type20 Seckill goods start-->
+<template name="tpl_diy_con_20">
+	<view class="members_con act_goods_con" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			
+			<block wx:if="{{content.goodslist.length}}">
+				<view class="act_img">
+					<view bindtap="goUrl" data-url="{{ content.goodslist[0].link }}" class="taga">
+						<image src="{{ content.goodslist[0].pic }}" style="width:100%" mode="widthFix"/>
+					</view>
+				</view>
+				<view class="act_goods_info">
+					<view class="title">{{ content.goodslist[0].title }}</view>
+					<view class="tip-txt mgb10">抢完恢复原价{{ content.goodslist[0].original_price}}元</view>
+					<view class="act_info_bottom">
+						<text class="act_status_price">{{ content.act_status_price}}</text>
+						<text class="act_price">{{ content.goodslist[0].price}}</text>
+						<text class="act_ori_price">{{ content.goodslist[0].original_price}}元</text>
+					</view>	
+					<text class="tagi act_status">{{ content.act_status}}</text>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="act_img">
+					<view bindtap="goUrl" data-url="#" class="taga">
+						<image src="//store.bidcms.com/statics/images/diy/goodsView1.jpg" style="width:100%" mode="widthFix"/>
+					</view>
+				</view>
+				<view class="act_goods_info">
+					<view class="title">商品名称</view>
+					<view class="tip-txt mgb10">抢完恢复原价888元</view>
+					<view class="act_info_bottom">
+						<text class="act_status_price">疯抢价</text>
+						<text class="act_price">888</text>
+						<text class="act_ori_price tags">999元</text>
+					</view>	
+					
+					<text class="tagi act_status">还有机会</text>
+				</view>
+			</block>
+		</view>
+	</view>
+</template>
+<!--商家信息-->
+<template name="tpl_diy_con_22">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+				<view class="" style="display: inline-block;width: 100%;vertical-align: top;margin: 0px 1px 0px 0;font-size: 0;position: relative;font-weight: 400;text-decoration: none;-ms-text-size-adjust: none;-webkit-text-size-adjust: none;text-size-adjust: none;">
+					<view class="" style="border: 1px solid #ebebeb;background-color: #fcfcfc;overflow: hidden;padding: 12px 10px 12px 10px;position:relative;">
+						<view style="float:left;width:3rem;text-align:center;"><image src="{{content.imgsrc && content.imgsrc!=''?content.imgsrc:'//store.bidcms.com/statics/images/mapMark.png'}}" style="width:2rem;height:2rem;"/></view>
+						<view class="" style="width: 70%;float:left;">
+							<view class="" style="font-weight: 400;font-size: 1rem;">{{content.storeName && content.storeName!=''?content.storeName:'欢迎光临Bidcms演示店'}}</view>
+							<view style="font-size:0.8rem;color: #8c8c8c;">{{content.storeInfo && content.storeInfo!=''?content.storeInfo:'点击右侧按钮咨询店主，电话：18534394030'}}</view>
+						</view>
+						<view style="position:absolute;top:1.2rem;right:0.6rem;">
+							<button style="width:2rem;height:2rem;background-image:url(//shop.bidcms.com/store/data/widget/22/phone.png);background-repeat:no-repeat;background-size:cover;border:0px;float:left;" bindtap="goPhone" plain="true" data-phone="{{content.storeTel}}"></button>
+							<button style="width:2rem;height:2rem;background-image:url(//shop.bidcms.com/store/data/widget/22/weixin.png);background-repeat:no-repeat;background-size:cover;border:0px;float:left;" open-type="contact" plain="true"></button>
+						</view>
+					</view>
+				</view>
+		</view>
+	</view>
+</template>
+<!--优惠券-->
+
+<template name="tpl_diy_con_23">
+	<view class="members_con" data-type="{{type}}" data-id="{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="background-color:#f8f8f8">
+				<view style="width: 100%;text-align: center;padding: 5px 0;font-size: 0.9rem;position: relative;background: #fff;"><text style="padding: 5px 8px;display: inline-block;position: relative;background: #fff;z-index: 3;color: #333;">优惠券</text><text style="position: absolute;top: 50%;left: 50%;margin-left: -80px;z-index: 0;width: 160px;border-top: .05rem solid #A9A9A9;"></text></view>
+				<view style="margin:0px;padding:0px;">
+				<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+					<view style="position: relative;background: #fff;width: 100%;min-height: 66px;margin-bottom: 10px;border-top:1px solid #F0F0F0;" bindtap="goUrl" data-url="plugins/discount/index.php?act=detail&id={{item.couponid}}">
+						<view style="padding: 15px 10px;color: #333;display: block;">
+							<view style="width: 20%;vertical-align: top;display: table-cell;">
+								<text style="width: 50px;height: 50px;background-size: contain;display: inline-block;background-image:url({{item.pic}});background-repeat:no-repeat;">
+								</text>
+							</view>
+							<view style="width: 58%;display: table-cell;line-height:1.2em;">
+								<view style="font-size: 0.8rem;color: #333;padding-bottom: 0.4rem;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;">{{item.coupon_name}}</view>
+								<view style="font-size: 0.6rem;color: #888;width: 100%;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;">{{item.coupon_desc}}</view>
+							</view>
+							<view style="text-align: center;display: table-cell;width: 2000px;">
+								<view style="font-size:xx-small;height:2em;">{{item.used}}已领</view>
+								<navigator href="#" style="border: 1px solid #f44336;padding: 2px 12px 2px 12px;border-radius: 10px;color: #f44336;font-size: 0.8em;">领券</navigator>
+							</view>
+						</view>
+					</view>
+				</block>
+				</view>
+				<view style="width: 100%;text-align: center;background: #fff;color: #333;font-size:1em;padding:10px 0px;" bindtap="goUrl" data-url="plugins/discount/index.php">查看全部优惠券<image src="//shop.bidcms.com/store/statics/images/right_arr.png" style="margin-left:5px;height:0.6em;width:0.6em;"/></view>
+			</view>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_25">
+	<view class="members_con diy_con_{{type}}" id="tpl{{id}}">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view style="background:#f8f8f8">
+				<view style="width:100%;text-align:center;padding:5px 0;font-size:14px;border-bottom:.05rem solid #F0F0F0;position:relative;background:#fff"><text style="padding:5px 8px;display:inline-block;position:relative;background:#fff;z-index:3;color:#333">附近商家</text><text style="position:absolute;top:50%;left:50%;margin-left:-80px;z-index:0;width:160px;border-top:.05rem solid #A9A9A9"></text></view>
+				<view class="clearfix storelistUl">
+				<block wx:for="{{content.dataset}}" wx:for-item="item" wx:for-index="index" wx:key>
+					<view style="position:relative;background:#fff;width:100%;min-height:66px;margin-bottom:10px">
+						<a href="javascript:void(0):;" style="padding:15px 10px;color:#333;display:block">
+							<view style="width:20%;vertical-align:top;display:table-cell">
+							<image style="width:100%;width:50px;height:50px;border:1px solid #EFEFEF;border-radius:3px;" mode="widthFix" src="{{item.pic}}" alt=""/>
+							</view>
+							<view style="width: 58%;display: table-cell;">
+								<view style="font-size: 15px;color: #333;padding-bottom: 4px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;">{{item.stores_name}}</view>
+								<view style="font-size: 12px;color: #888;width: 100%;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;">此处显示门店地址</view>
+								
+							</view>
+							<view style="text-align: center;display: table-cell;width: 2000px;">
+								<view style="font-size:0.7rem;width:75px;right:7px;text-align:center;color:#999;">12km</view>
+								<view style="margin-top:0.5rem;border: 1px solid #f44336;padding: 2px 6px;border-radius: 10px;color: #f44336;font-size: 12px;">进店</view>
+							</view>
+						</a>
+
+						<view style="height:35px;line-height:35px;display:inline-flex;width:100%;font-size:14px;border-top:1px solid #f2f2f2">
+							<view class="w50" style="width:50%;text-align:center;border-right:1px solid #f2f2f2">
+								<a href="javascript:void(0);" class="icon_location_link link1" style="display:inline-block;color:#666;">查看地图</a>
+							</view>
+							<view class="w50" style="width:50%;text-align:center;border-right:none;">
+								<a href="tel:{{item.phone}}" style="display:inline-block;color:#333;">联系服务顾问</a>
+							</view>
+						</view>
+					</view>
+				</block>
+				</view>
+				<view style="width:100%;text-align:center;padding:10px 0;font-size:0.7rem;color:#C2C2C2;background:#fff"><a href="" style="color:#C2C2C2;">查看全部店铺</a><text style="background:url(/statics/mobile/images/right_arr.png) no-repeat;width:9px;height:10px;display:inline-block;background-size:100%;margin-left:5px"></text></view>
+			</view>
+		</view>
+	</view>
+</template>　

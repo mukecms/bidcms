@@ -1,0 +1,68 @@
+<view class="pages">
+	<scroll-view scroll-x="ture"  style="width: 100%;margin-bottom:15px;" class="clist">
+		<block wx:for="{{orderTab}}" wx:for-index="i" wx:key="index">
+		<view class="citem {{i==current?'action':''}}" data-index="{{i}}" data-params="{{item.params}}" bindtap="filterOrder">{{item.name}}</view>
+		</block>
+	</scroll-view>
+	<block wx:for="{{orderList}}" wx:key="index">
+		<template is="mypaylog" data="{{item}}"/>
+	</block>
+	<view class="prompt" wx:if="{{orderList.length == 0}}" style="text-align:center;font-size:1rem;">
+		<image src="../../images/dd.png" style="width:80px;height:80px;"/>
+		<view>您没有任何订单</view>
+	</view>
+</view>
+
+<template name="mypaylog">
+  <view class="mui-content">
+    <view class="mui-card">
+      <view class="mui-card-header mui-card-media">
+        <image src="http://shop.bidcms.com/store/statics/images/people.png"/>
+        <view class="mui-media-body">
+          Bidcms开源电商
+          <view class="tagp">交易时间 {{item.updatetime}}</view>
+        </view>
+      </view>
+      <view class="mui-card-content" >
+        <view class="mui-card-content-inner" style="padding-bottom:0px;">
+          <view style="text-align:center;margin-bottom:1rem;">付款金额<view style="font-size:2rem;padding-top:0.5rem;"><text style="font-size:1rem;">￥</text>{{item.payable}}</view></view>
+          <view class="goods-list" >
+            <block wx:for="{{item.order_goods}}" wx:for-item="citem">
+            <view class="mui-table-view" data-id="{{citem.id}}">
+              <view class="mui-table-view-cell mui-media" style="padding-left:0px;padding-right:0px;">
+                  <image class="mui-media-object mui-pull-left" src="{{citem.goods_thumb}}" />
+                  <view class="mui-media-body">
+                    {{citem.goods_name}}
+                    <view class="mui-ellipsis" style="color:#8f8f94;">{{citem.sku_name}}</view>
+                    <view style="color:#ff0000;">¥{{citem.current_price}} X {{citem.num}}</view>
+                  </view>
+                </view>
+            </view>
+            </block>
+          </view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">订单编号 <text style="color: #333;">{{item.order_sn}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">交易状态 <text style="color: #333;">{{item.status_name}}</text>
+          </view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">{{item.content}}</view>
+        </view>
+      </view>
+      
+      
+      <view class="mui-card-footer"  wx:if = "{{item.order_status == 0}}">
+        <view class="mui-card-link"><button id="{{item.id}}" id="{{item.id}}" bindtap="cancelOrder" size="mini">取消订单</button></view>
+				<view class="mui-card-link"><button type="primary"  id="{{item.id}}"  size="mini" bindtap="pay">继续支付</button></view>
+      </view>
+      <view class="mui-card-footer"  wx:if = "{{item.order_status == 2}}">
+        <view class="mui-card-link"></view>
+        <view class="mui-card-link"><button type="primary"  id="{{item.id}}"  size="mini" bindtap="confirmOrder">确认收货</button></view>
+      </view>
+      
+      
+      <view class="mui-table-view">
+        <view class="mui-table-view-cell" bindtap="goUrl" data-url="/pages/order/detail/index?id={{item.id}}">
+            查看订单详情<text class="arrow"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

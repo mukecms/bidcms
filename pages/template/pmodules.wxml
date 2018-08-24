@@ -1,0 +1,242 @@
+<template name="tpl_diy_con_Header_style47">
+	<view class="members_con">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="header_title clearfix" style="width:100%;background-color:#fff;background-repeat:no-repeat;background-position:center center;background-size:20%;text-align:center;padding:5px 0;background-image:url({{content.headerlogo}})">
+				<view bindtap="goUrl" data-url="" style="float:left;display:inline-block;text-align:center;color:#909090;padding:0 4px;padding-left:3.125%" class="ico_left fl"><text style="display:block;background-repeat:no-repeat;background-position:center;height:32px;width:24px;background-size:contain;width:20px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAmCAYAAACh1knUAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkZGRjQ3RUY5QTE5RDExRTc5MkNBODM3OTBFRUM3RjY4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkZGRjQ3RUZBQTE5RDExRTc5MkNBODM3OTBFRUM3RjY4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RkZGNDdFRjdBMTlEMTFFNzkyQ0E4Mzc5MEVFQzdGNjgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RkZGNDdFRjhBMTlEMTFFNzkyQ0E4Mzc5MEVFQzdGNjgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7hMT76AAABT0lEQVR42mLctWsXAxFADojnALE9ELMRof4XEB8E4hQgfkSMBUwMxIG5QOxKpCMYoOpA6hcSqR7uEFUgXgvEn4D4PxbsAlUnAMSMRGABqHpbHOb9h9oFslMdpJAFiDWA+DiSZnyAkYF6gBeIg4DYCYgtQSHSCnXEeiCWwOHDPVDN7/H4EBl/gKo/jCfUZIB4G9TuNiZoXIJAHhC/xOH6ZKhjfhHp299Q9Ql41DyFmgsCrizQIAKBJ3g0PUJyMDXBCyjNw8QwSMCoQ0YdQi2HHCGy/MCGjwypEGEhUp3NaBoZdcho9iXRIZQ0iBipmX2tR9PIqENGQvY9PFhChKrZd7T2HXXIqEOQHfIJypYdAPslofQnkEN2QzmzgFiBjo4ADYfNh7L3gMqRSuhgiQcQ3x+AUAGNuVSBQuQ2EJsB8RqkARZ6gA9QO82B+CZAgAEAZuxvtQAD6ZsAAAAASUVORK5CYII=)"></text></view>
+				<view bindtap="goUrl" data-url="" style="padding-right:3.125%;float:right;" class="ico_right fr"><text style="display:block;background-repeat:no-repeat;background-position:center;height:32px;width:24px;background-size:contain;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAnCAYAAAB9qAq4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJBNUY5NjY3QTE5RDExRTc5NzE3QkZERjBCMEUzQ0JDIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJBNUY5NjY4QTE5RDExRTc5NzE3QkZERjBCMEUzQ0JDIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkE1Rjk2NjVBMTlEMTFFNzk3MTdCRkRGMEIwRTNDQkMiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkE1Rjk2NjZBMTlEMTFFNzk3MTdCRkRGMEIwRTNDQkMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5iwOAvAAAFtElEQVR42rSYC2wUdRDGr0dLsSgV1BikSsGgYqCIKb5IWqQqIr6gCFpFUbExqIDWB8QHkqLBqNXKo7T1EU19hYgKRIkGULBQ0USlTZQISiuKgjbYYotwtX5Dfptslru9PXqd5Mve7t3+79v5z3wzsymVlZWhBG2wcJUwRjhPOE04zvObw8LvQoOwUfhY+C7aYsXFxb5/lpoAsbHCvcKVHkL/CfuENqGT7/oKp4PxwtPCeqFCeC8RbwQhOFQoFQpd174RPhE2CTsg+A9kM4SThEHCJTzQxUIB+Fx4TPgiGQTvFMqEPnjnXbywifNo9jf4SVjHw1ko2F5OF/Lxpnl1gc86Rywc43qKUC68DLk6Yu4mYqozwbj9VpgpXCisFtKE+cKKqqqqExIlaOReF2ZxXsZTbwx13eqFa4UHhQ7CZqUfyWgEXxSm4aX7hBLhUCi59jzkLLEuE2pEskcQgne4PGcZuyTUffahMBVJMq8+FY/gWXjP7AVhWaj7bY3wAJ8flhcL/Ag+K1gsbBXmBtDEiUL/GN+fLdxNUviahHoJ2mixXyaSvaIRzMfNEWFOnJhLF6otuIVrYvzmEeRoZEBPliBNOUJRNIKOm+1Pt8RZ7H7K3WfCD4jvFcIk5ONM4VbhR+FX4TrhdmEGxAdH8WIjD2Q2R15Mcwu13TCOrC2PQ84qwkKybxRVwT73RDaGCS+xlm3ZBzhhH+Fj3v8aEfdaBaoxXBiNA47cfDU3WjH/0oecla1VLJ7jynaLtSGUxJHE3TT+aBHl71LhVBqLLTFisUmHTzmd7N7iMXz+CC9Es55Ugh5s2U6qS4gt3U1lyEbX3hEOQiZMCLTQ4bT5OGEVxzxtc6qzxU4g+xXvQ2ikeWAX15rw6m62cgLX3xdu5B5rKu6hdgexr/C4qcAAoTGMVEQI6lAckrtc5weE74VXIDeXuBwHoREkyTJKXBBrpCuyHctyttjir1n4K0GRLSRuc5CbZ0iAC2i36pCj3ATWbKPLmeg0uE671Q7zIJYnzKPPczqVAs5T8LR5biDSYtgm1Arbhc1sZbRE6SCxjuoHO+O0UAPwWCEEO+hIhtH+F1JTU1jTqkEN22u6eT2eDpHRCXfUvWjVD/t0PbPRzBo64kaEOZ37TsR7rVxLozoUEedjCf7aeKSUwRnyZpvzxxFmiH4+9/xC8I9C4zKFJ2lmD6B52/BqhHC5CDmyBmSv8KbwhI8THHLWxTfo+KhD8A+eODvOg+0gCUKQnY/IhxDv3shLOtcmMZdsRTpCATxnarCc+xbqvDrMaOiUsaD2BnFYwlY2U4VOoWLY4DQFbX0ryIggMrl42T0nzQi7WvnxCRA0r79KNjoLFhNjTZS/TB4giOeyabkyPV+tT9HgPhzF76SqNPisNYS4ayX22l0d0b8csyhxRv42RNcaheMRbK+c9WX687ZmJkl5YW6qxRMz4zzsIuJwO1pnW7uHzyb0f1JdLKMvF36j+tRD+hzPemlsq5ecrXuDMnlvqmtQyiNDyyEQzTYI+/FCO/AOO51kcpjv+riOzZ7fLo8SWpblN4tcvVsHV/OElijP+XTKyRyiFtCAeG22yK31dtQRuuoI0jGrm4elYjTxqHFU5CpiDU11rtHPz4tdNXPA0ijXbdx4KN5cXMq8moZ+TUgyuVxKpfedkCXedHmvMx7BDhJlA7KwMkBmB7VYWmcN7xSRaw366qOV7mMNGrYUKRjUBXL9eNgzPNdNDaaK3M+Jvt1qoWl0erMiamopfV6iVhVjRr5L5DYfy+s3J7PnoVNWaU6mzbKuZQVV4lz0zWu92dJUesTzo/zmceHtZLxhXcv8ewsD0AjGwsmuGNrDdh2kivRn7aGETMSz5mvM10l5BeyMBNUsnE8rNZrSleUMOB7b4+piFrvauRZvW5+sl+jOtq8DYYJ+ICNBBl35fhrUna7GYPGxZtf/AgwANEOJKiGesvUAAAAASUVORK5CYII=)"></text></view>
+			</view>
+		</view>
+	</view>
+</template>
+<template name="tpl_diy_con_Header_style15">
+<view style="" class="members_head">
+	<view style="width:100%;height:auto;overflow:hidden;position:relative" class="mobile15_headertop">
+		<image src="{{content.bg}}" style="width:100%;" mode="widthFix"/>
+		<view style="display:inline-block;position:absolute;bottom:5px;left:90px;color:#fff;font-size:15px;font-weight:400">{{userInfo.username}} </view>
+	</view>
+	<view style="width:100%;height:2.5rem;position:relative;background:0 0" class="mobile15_headerbot">
+		<view style="position:absolute;top:-33px;left:10px;background:#fff;padding:2px" class="mobile15_headerbot_le"><image src="{{content.photo}}" style="width:4rem;height:4rem;border-radius:50%"/></view>
+		<view style="width:75%;float:right" class="mobile15_headerbot_ri">
+			<view>
+				<block wx:for="{{content.datasets}}" wx:for-item="item" wx:key="id">
+				<view style="float:left;width:25%;text-align:center;overflow:hidden;background-size:1px 27px" class="{{item.active}}" >
+					<view style="height:18px;line-height:18px;color:#696969;margin-top:2px;color: {{item.titleColor}}"><block wx:if="{{item.logo!=''}}"><image src="{{item.logo}}" style="width:1.1rem;height:1.1rem;"/></block><block wx:else>{{item.num}}</block></view>
+					<view bindtap="goUrl" data-url="" style="display:block;color:#404040;line-height:18px;margin-top:2px;color: {{item.titleColor}}">{{item.showtitle}}</view>
+				</view>
+				</block>
+			</view>
+		</view>
+	</view>
+
+	<block wx:if="{{content.dataset.length}}">
+	<view style="width:96%;padding:0 2%;overflow:hidden;margin-top:6px" class="mobile15_nav">
+		<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="id">
+		<view bindtap="goUrl" data-url="{{item.link}}" style="float:left;display:block;width:48%;height:40px;line-height:40px;text-align:center;color:#fff;font-size:15px;background:#d86952;margin-right:1%;margin-left:1%;margin-bottom:2%"><text>{{item.showtitle}}</text> <text style="font-style:normal;font-size:14px">{{item.englishtitle}}</text> </view>
+		</block>
+	</view>	
+	</block>
+</view>
+</template>
+<template name="tpl_diy_con_Header_style7">
+<view class="members_head">
+	<view class="mobile7_headertop" style="width:100%;height:auto;overflow:hidden;border-bottom:#4c9c9d solid 5px;position:relative">
+		<image src="{{content.bg}}" mode="widthFix" style="width:100%"/>
+		<view style="display:inline-block;position:absolute;bottom:5px;left:80px;color:#fff;font-size:17px;font-weight:400"><block wx:if="{{userInfo}}">{{userInfo.username}}</block><block wx:else><view bindtap="goUrl" data-url="?con=user&act=login" style='color:#fff'>未登录</view></block></view>
+	</view>
+	<view class="mobile7_headerbot" style="width:100%;height:44px;border-bottom:#ccc solid 1px;position:relative;padding:6px 0">
+		<view class="mobile7_headerbot_le" style="position:absolute;top:-38px;left:10px;width:66px;height:66px;padding:2px;background:#fff;border-radius:50%;overflow:hidden;box-shadow:#666 0 0 15px"><image src="{{content.photo}}" style="width:4rem;height:4rem;"/></view>
+		<view class="mobile7_headerbot_ri" style="width:75%;float:right">
+			<view>
+				<view class="" style="float:left;width:25%;text-align:center;overflow:hidden;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMBAQEBAQEBAgEBAgICAQICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//AABEIADcAAQMBEQACEQEDEQH/xABgAAEBAQAAAAAAAAAAAAAAAAAHBgoQAAADBAkFAAAAAAAAAAAAAAABFQMEUmECEhRRVJGh0dKSk7Hh8AEBAAAAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3cqxXnpuAKlmf2YArVp6+gEVXbTzPiAq0qlB4AKaKcBdJbgE2yOWJde6y5gP/9k=) right no-repeat;background-size:1px 27px">
+					<view bindtap="goUrl" data-url="?act=goods" style="display:block;color:#404040;line-height:1.2rem;margin-top:2px">
+					<text style="display:block;color:#696969;margin-top:2px;font-size:1rem"><block wx:if="{{bidcmsData.goods_count}}">{{bidcmsData.goods_count}}</block><block wx:else>10</block></text>
+					<text style="font-size:0.6rem;">全部商品</text>
+					</view>
+				</view>
+				<view class="" style="float:left;width:25%;text-align:center;overflow:hidden;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMBAQEBAQEBAgEBAgICAQICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//AABEIADcAAQMBEQACEQEDEQH/xABgAAEBAQAAAAAAAAAAAAAAAAAHBgoQAAADBAkFAAAAAAAAAAAAAAABFQMEUmECEhRRVJGh0dKSk7Hh8AEBAAAAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3cqxXnpuAKlmf2YArVp6+gEVXbTzPiAq0qlB4AKaKcBdJbgE2yOWJde6y5gP/9k=) right no-repeat;background-size:1px 27px">
+					<view bindtap="goUrl" data-url="?act=goods" style="display:block;color:#404040;line-height:1.2rem;margin-top:2px">
+					<text style="display:block;color:#696969;margin-top:2px;font-size:1rem"><block wx:if="{{bidcmsData.goods_count}}">{{bidcmsData.goods_count}}</block><block wx:else>10</block></text>
+					<text style="font-size:0.6rem;">最新商品</text>
+					</view>
+				</view>
+				<block wx:for="{{content.datasets}}" wx:for-item="item" wx:key="id">
+				<view class="{{item.active}}" style="float:left;width:25%;text-align:center;overflow:hidden;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMBAQEBAQEBAgEBAgICAQICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//AABEIADcAAQMBEQACEQEDEQH/xABgAAEBAQAAAAAAAAAAAAAAAAAHBgoQAAADBAkFAAAAAAAAAAAAAAABFQMEUmECEhRRVJGh0dKSk7Hh8AEBAAAAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3cqxXnpuAKlmf2YArVp6+gEVXbTzPiAq0qlB4AKaKcBdJbgE2yOWJde6y5gP/9k=) right no-repeat;background-size:1px 27px">
+					<view bindtap="goUrl" data-url="{{item.link}}" style="display:block;color:#404040;line-height:1.2rem;margin-top:2px">
+					<view style="display:block;color:#696969;margin-top:2px;font-size:1rem;color: {{item.titleColor}}"><block wx:if="{{item.logo!=''}}"><image src="{{item.logo}}"  style="width:1rem;height:1rem;"/></block><block wx:else>{{item.num}}</block></view>
+					<text style="font-size:0.6rem;color: {{item.titleColor}}">{{item.showtitle}}</text>
+					</view>
+				</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	
+	<block wx:if="{{content.dataset.length}}">
+	<view class="mobile7_nav" style="width:100%;height:65px;overflow:hidden;background:#5ea6a7">
+		<view>			
+			<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="id">
+			<view style="float:left;width:24.5%;height:65px;text-align:center;border-left:#fff solid 1px">
+				<view bindtap="goUrl" data-url="{{item.link}}">						
+					<image src="{{item.pic}}" style="margin-top:8px;height:2rem;width:2rem;"/>
+					<view style="margin-top:5px;font-size:16px;color:#fff">{{item.showtitle}}</view>
+				</view>
+			</view>
+			</block>				
+		</view>
+	</view>
+	</block>	
+</view>
+</template>
+
+<template name="tpl_diy_con_Header_style16">
+<view style="" class="membersbox">
+	<view style="width:100%;height:auto;position:relative;margin-bottom:15px" class="mobile9_headertop">
+		<image src="{{content.bg}}" style="width:100%;" mode="widthFix"/>
+        <view style="position:absolute;bottom:-10px;left:26px;width:6rem;height:6rem;border-radius:999px;overflow:hidden;z-index:99;background-clip:padding-box" class="mobile9_headerbot_le">
+            <image src="{{content.photo}}" style="width:4.5rem;height:4.5rem;"/>
+        </view>
+        <view class="mobile9_headerbot_lenox" style="position:absolute;width:100%;bottom:0;font-size:16px;line-height:20px;background:rgba(0,0,0,.5);z-index:9;color:#FFF;padding-left:120px;word-wrap:break-word;overflow:hidden;padding-top:5px;padding-bottom:5px">
+        	{{content.title}}
+        </view>
+    </view>
+</view>
+</template>
+<template name="tpl_diy_con_Header_style17">
+	<view style="border:1px solid #e7e7e7;overflow:hidden;margin-bottom:10px;background:#fff" class="members_head">
+		<view style="" class="members_head_top">
+			<image src="{{content.bg}}" style="width:100%;" mode="widthFix"/>
+			<view style="display:inline-block;position:absolute;bottom:10px;left:80px;color:#fff;font-size:14px">{{userInfo.username}}</view>
+		</view>
+		<view style="width:100%;position:relative" class="members_head_nav">
+			<view style="width:65px;height:65px;overflow:hidden;position:absolute;top:-25px;left:10px;border-radius:6px" class="members_head_nav_le"><image src="{{content.photo}}" style="width:4rem;height:4rem;"/></view>
+			<view style="float:right;width:75%;margin-top:5px" class="members_head_nav_ri">
+				<view>
+					<block wx:for="{{content.datasets}}" wx:for-item="item" wx:key="id">
+					<view style="float:left;text-align:center;background:url(//shop.bidcms.com/store/statics/images/header3.jpg) right no-repeat;background-size:1px 45px;width:25%" class="{{item.active}}" >
+						<view style="display:block;height:15px;line-height:15px;color:#4c4c4c;margin-top:5px;font-size:18px;color: {{item.titleColor}}"><block wx:if="{{item.logo!=''}}"><image src="{{item.logo}}" style="width:1.1rem;height:1.1rem;"/></block><block wx:else>{{item.num}}</block></view>
+						<view bindtap="goUrl" data-url="" style="display:block;height:20px;line-height:20px;color:#4c4c4c;color: {{item.titleColor}}">{{item.showtitle}}</view>
+					</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<template name="tpl_diy_con_Header_style12">
+	<view style="border:1px solid #e7e7e7;overflow:hidden;margin-bottom:10px;background:#fff" class="members_head">	
+	<view class="mobile12_headertop" style="width:100%;height:auto;overflow:hidden;position:relative">
+		<image src="{{content.bg}}" style="width:100%" mode="widthFix"/>
+		<view style="display:inline-block;position:absolute;bottom:5px;left:90px;color:#fff;font-size:15px;font-weight:400">18335447965</view>
+	</view>
+	<view class="mobile12_headerbot" style="width:100%;height:44px;position:relative">
+		<view class="mobile12_headerbot_le" style="position:absolute;top:-33px;left:10px;width:66px;height:66px;padding:2px;background:#fff;border-radius:50%;overflow:hidden"><image src="{{content.photo}}"  style="width:4rem;height:4rem;"/></view>
+		<view class="mobile12_headerbot_ri" style="width:75%;float:right">
+			<view>
+				<block wx:for="{{content.datasets}}" wx:for-item="item" wx:key="id">
+				<view class="{{item.active}}" style="float:left;width:24%;text-align:center;overflow:hidden;background:url(//shop.bidcms.com/store/statics/images/header3.jpg) right no-repeat;background-size:1px 27px">
+					<view style="display:block;height:18px;line-height:18px;color:#696969;margin-top:2px;color: {{item.titleColor}}"><block wx:if="{{item.logo!=''}}"><image src="{{item.logo}}" style="width:1.1rem;height:1.1rem;"/></block><block wx:else>{{item.num}}</block></view>
+					<view bindtap="goUrl" data-url="" style="display:block;color:#404040;line-height:18px;margin-top:2px;color: {{item.titleColor}}">{{item.showtitle}}</view>
+				</view>
+				</block>
+			</view>
+		</view>
+	</view>
+</view>
+</template>
+
+
+
+<!-- 导航 -->
+<template name="tpl_diy_con_Header_style12_nav">
+	<view class="mobile12_content members_con" style="overflow:hidden">
+		<block wx:if="{{content.dataset.length}}">
+		<view class="mobile12_contentnav" style="margin-top:2%;overflow:hidden;width:100%">
+			<view>
+				<block wx:for="{{content.dataset}}" wx:for-item="item" wx:key="id">	
+				<view class="colblue" style="float:left;width:48%;margin:0 1% 0 1%;padding-bottom:12%;text-align:center;background-color:{{item.bgColor}}">
+					<view bindtap="goUrl" data-url="{{item.link}}" style="display:block;">
+						<image src="{{item.pic}}" style="width:3.6rem;height:3.6rem;margin-top:20%;"/>
+						<text style="display:block;margin-top:10px;color:#fff;font-size:18px;font-weight:400">{{item.showtitle}}</text>
+					</view>
+				</view>
+				</block>
+			</view>
+		</view>
+		</block>	
+	</view>
+</template>
+
+<template name="tpl_diy_con_Header_style9">
+<view class="membersbox">
+	<view class="mobile9_headertop" style="width:100%;height:auto;overflow:hidden;border-bottom:#04153c solid 4px">
+		<image src="{{content.bg}}" style="width:100%;" mode="widthFix"/>
+        <view class="mobile9_headerbot_le" style="position:absolute;top:15px;left:26px;width:68px;height:68px;padding:2px;background:#fff;border-radius:50%;overflow:hidden">
+            <image src="{{content.photo}}" style="width:4.2rem;height:4.2rem"/>
+        </view>
+        <view class="mobile9_headerbot_lenox" style="position:absolute;top:38px;left:110px;font-size:20px;text-shadow:-1px 2px 2px #FFF">
+            {{userInfo.username}}      
+		</view>
+    </view>
+
+	<view class="mobile9_headerbot" style="width:100%;height:44px;border-bottom:#ccc solid 1px;border-top:#e1e3e8 solid 1px;box-shadow:#ccc 1px 0 5px;margin-bottom:10px">
+		<view>
+			<block wx:for="{{content.datasets}}" wx:for-item="item" wx:key="id">
+			<view class="{{item.active}}" style="float:left;width:25%;text-align:center;overflow:hidden;background:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMBAQEBAQEBAgEBAgICAQICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA//AABEIADcAAQMBEQACEQEDEQH/xABgAAEBAQAAAAAAAAAAAAAAAAAHBgoQAAADBAkFAAAAAAAAAAAAAAABFQMEUmECEhRRVJGh0dKSk7Hh8AEBAAAAAAAAAAAAAAAAAAAAABEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3cqxXnpuAKlmf2YArVp6+gEVXbTzPiAq0qlB4AKaKcBdJbgE2yOWJde6y5gP/9k=) right no-repeat;background-size:1px 30px">
+				<view style="height:18px;line-height:18px;color:#696969;margin-top:2px;color: {{item.titleColor}}"><block wx:if="{{item.logo!=''}}"><image src="{{item.logo}}" style="width:1.1rem;height:1.1rem;"/></block><block wx:else>{{item.num}}</block></view>
+				<view bindtap="goUrl" data-url="" style="display:block;color:#404040;line-height:18px;margin-top:2px;color: {{item.titleColor}}">{{item.showtitle}}</view>
+			</view>
+			</block>
+		</view>
+	</view>
+</view>
+</template>
+
+<!-- Header_style50 tpl start-->
+<template name="tpl_diy_con_Header_style2">
+<view class="members_head" style="background-size:cover;background-repeat:no-repeat;min-height:200px;position:relative;background-image:url({{content.bg}})">
+	<view class="mobile_headertop" style="text-align:center;padding:15px 0 0">
+		<view class="head_pic" style="display:inline-block;background:rgba(255,255,255,.6);padding:3px;overflow:hidden"><image src="{{content.photo}}" style="border-radius:50%;width:5rem;height:5rem;" mode="widthFix"/></view>
+		<view class="head_title" style="margin-top:6px"><view style="display:inline-block;background:rgba(0,0,0,.2);color:#fff;padding:4px 8px;border-radius:10px"><view bindtap='goUrl' data-url="/pages/user/index">{{userInfo?userInfo.nickName:'未登录'}}</view></view></view>
+	</view>
+	<view class="mobile_headerbot" style="position:absolute;bottom:0;left:0;background:rgba(0,0,0,.5);width:100%">
+		<view>
+			<view style="border-bottom:solid 2px #d62422;float:left;width:33%;text-align:center;padding:4px 0">
+				<view bindtap="goUrl" data-url="/pages/list/index" style="display:block;color:#fff;line-height:18px;margin-top:2px">
+				<text style="display:block;color:#fff;line-height:18px;margin-top:2px;height:1.1rem;"><block wx:if="{{bidcmsData.goods_count}}">{{bidcmsData.goods_count}}</block><block wx:else>10</block></text>
+				全部商品
+				</view>
+			</view>
+
+			<view style="float:left;width:33%;text-align:center;padding:4px 0">
+				<view bindtap="goUrl" data-url="/pages/order/index" style="color:#fff;line-height:18px;margin-top:2px">
+				<view style="text-align:center;margin-top:2px;height:1.1rem;"><image src="//shop.bidcms.com/store/data/template/2/50tab_ico4.png" style="width:1.1rem;height:1.1rem;"/></view>
+				我的订单</view>
+			</view>
+			<view style="float:left;width:33%;text-align:center;padding:4px 0">
+				<view bindtap="goUrl" data-url="plugins/checkin/index.php" style="display:block;color:#fff;line-height:18px;margin-top:2px" data-type="plugin"><view style="text-align:center;margin-top:2px;height:1.1rem;"><image src="//shop.bidcms.com/store/data/template/2/50tab_ico5.png" style="width:1.1rem;height:1.1rem;"/></view>
+				会员签到</view>
+			</view>
+		</view>
+	</view>
+</view>
+</template>
+<!-- Header_style50 tpl end-->
+
+<!-- Header_style51 tpl start-->
+<template name="tpl_diy_con_Header_style51">
+	<view class="members_con">
+		<view class="modulePadding" style="padding-top:{{content.modulePadding}}px;padding-bottom:{{content.modulePadding}}px;">
+			<view class="header_title clearfix" style="width:100%;background-color:#fff;background-repeat:no-repeat;background-position:center center;background-size:20%;text-align:center;padding:5px 0;background-image:url({{content.headerlogo}})">
+				<view href="" style="display:block;text-align:center;color:#909090;padding:0 4px 0 8px;font-size:13px;width:55px;height:20px;margin-top:5px" class="ico_left fl"><text style="max-width:39px;max-height:18px;overflow:hidden;display:inline-block">太原</text><text style="display:inline-block;height:6px;width:11px;background-repeat:no-repeat;background-position:center;background-size:contain;margin-left:5px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMCAYAAABm+U3GAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjEzOURGMTgzOEUxMzExRTdBQkY0ODVCRjZEOURDNzFCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjEzOURGMTg0OEUxMzExRTdBQkY0ODVCRjZEOURDNzFCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTM5REYxODE4RTEzMTFFN0FCRjQ4NUJGNkQ5REM3MUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MTM5REYxODI4RTEzMTFFN0FCRjQ4NUJGNkQ5REM3MUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4ug3V8AAABIElEQVR42pySP0vDQBiHL2knBz9B/QIuotGP4KyzgxKhyeZS6OZcqFZwkkCkrSIBXfwQorRCdesqzk4OgoPgc/BLOUqJiS88yZv78+TuvfOiKHo3xqxAC85MxUiSZJbHcbzOa2JzHzpq70n+r5B0rM+7Oo8L+IBbONXPTipK1yS1vpRdND1KkfcfwqXydgX5BowkzZDu2cZaEAT5gBew9d6BbfiCxz+kgbPSmTSvsRt9yDu7cFQgXZW0BgNXukhsI4NQ+bnKMh+bOn07/wZpOD/ALYUbr/AGuyrLNzyobwuetf0+0oNFgnrBVofgqTz2Sk7hyblSQx24qSq2MYAfuIJ7+FR7Cs2iiX6J63QN+8qXy0jLrNiVL0EDjstM+BVgAPn4RMD5xEorAAAAAElFTkSuQmCC);vertical-align:2px"></text></view>
+				<view style="display:inline-block;background:#FAFAFA;vertical-align:top;padding:3px 0;width:74%;border-radius:20px;border:1px solid #FAFAFA;position:relative;height:24px;">
+					<view style="position:absolute;right:5px;top:4px;width:20px;height:20px;border:none;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAdCAYAAAC9pNwMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5YzAwODRmMC03NWIwLTBmNDMtYTc1YS1kOGMxMDgxZDg2OWYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mzg4NDk5MkYxNDA1MTFFNkFCOUVDMDdENjRDOTU3RjQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mzg4NDk5MkUxNDA1MTFFNkFCOUVDMDdENjRDOTU3RjQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjFmMTQ5NGY2LTM2MDctYzg0MC04YzYxLTQ4MzI3NmRiMzgzNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5YzAwODRmMC03NWIwLTBmNDMtYTc1YS1kOGMxMDgxZDg2OWYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7kIzA2AAACi0lEQVR42ryXS4hNcRzHz2g8upgYC8ojabDwmLDCKAuDmlmQzGQhUa7IYpLSDWUxJqlJInXvyFigEM00UR6xwGBDw8LCDIpk0iivzXhcn199T53GOXPOPc7xr0//c+4993z+79/vluXzeSek1EMD1MIUz+dFeAwdcDmbzb5ySihlw4i3QyuM1/1XeAYfYRRUwRzP81dgHw3oiyIe4fPZZOiGAoyGHMyCCqiB9VAHc/X9WrgOG6C3UCjsjCO2l72BpdACY+AIvA74/SA9vAHWkOXwFk4hby1FXAk9ktm87tc8RirIu2GGer8HeXNU8V0N3Rq45sQs6v1Dazjy2jCxzctCOAw3nX8vK1V3hIlPwjc4kIDUej1ItQMy9HpXkHid6oNOggW57Yrf0Bwk3qrrM07y5RxMpNcz/cSr4TN8SUHcqXqFn9i2z1MnneLu/9lBi+tTSuLvqiuCxBNSEmc85/xfYlv6i1ISu4uqz09821YejE1BXKf6vp/4rK43pyDeYsPMnu71E1/VdUuSRvaudWQkHAo6QH7BXg13LkG3HUg/4NhwZ7XFz5fqdU0Cvb1FVQ4bGeZiWFh0I8o9z3Uc6UWqVXAcaWfQc+We6/ewGJ4oNueUfUQVVlOdh3nQhrSp1GTP9l4XzIcBRS1bgP0B71gGu2GT7i3hO6rGWFIxnfvTUZI9y7kWaMFNshwKPiifsga1K+o8Umr0QFKb12pX6lk7bTTgRCnprTsVllM3at4yQ75/oQh0AeHzgOG/o3yunWe2RRUPLXa6jYOfCixFXhY299M0OlPhEs83Bg11WLTp19xHykARvbMp0HZtoCFdccRx06ABBSL7J1KPvOe/iCW30Vqi3L3qjwADADj7uqPXu3ouAAAAAElFTkSuQmCC) center center no-repeat #FAFAFA;background-size:18px 18px;z-index:1000;"></view>
+					<input style="width:90%;height:24px;line-height:24px;text-indent:4px;border:none;background:#FAFAFA;position:absolute;left:10px;" type="text" placeholder="搜索"/>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!-- Header_style51 tpl end-->
+

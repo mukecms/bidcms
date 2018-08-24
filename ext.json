@@ -1,0 +1,11 @@
+{
+  "extEnable": true,
+  "extAppid": "wxdc6e222827825216",
+  "directCommit": false,
+  "ext":{
+    "appid":"wxdc6e222827825216",
+    "pid":13
+  },
+  "extPages": {
+  }
+}

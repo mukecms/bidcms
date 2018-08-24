@@ -1,0 +1,275 @@
+<template name="tpl_diy_con_typeUserCenter_style1">
+	<view class="membersbox">
+	    <view class="headers clearfix" id="header" style="background-image:url({{content.pic?content.pic:'//shop.bidcms.com/store/data/template/UserCenter_style1/membg.png'}})">
+		    <view class="headerModule">
+	            <view class="userimg fl"><image mode="widthFix" src="{{userInfo.avatarUrl?userInfo.avatarUrl:'//shop.bidcms.com/store/statics/images/user/userimg.png'}}" alt=""/></view>
+	            <view class="userinfo fl" id="userinfo">
+	            	<block wx:if="{{content.showID}}"><view class="clearfix"><text class="tagstrong" class="fl">ID:{{content.customer.id}}</text></view></block>
+	                <view class="clearfix"><text class="tagstrong" class="fl">{{content.customer.username}}</text><block wx:if="{{content.showLevel}}"><text class="tagspan fl rank_name">{{content.customer.level}}</text></block></view>
+	                <view>账户余额：<text class="tagstrong">￥{{content.customer.amount}}</text></view>
+	                <view>
+	                	<block wx:if="{{content.showPoint}}">积分：<text class="tagstrong points">{{content.customer.point}}</text></block>
+                    <text class="J-sign">
+                      <text class="J-point">会员签到</text>
+                      <text class="add_one" style="color:#f00;"></text>
+                    </text>
+		                
+	                </view>
+	            </view>
+	        </view>
+	    </view>
+	    <view class="mainmodule">
+			<view class="mainTab">
+					<view class="cur" style="width:33.3333%">会员中心</view>
+					<view style="width:33.3333%">分销中心</view>
+			</view>
+			<view class="mainicon ">
+	            <view class="clearfix">
+	                <view><view bindtap="goUrl" data-url=""><image mode="widthFix" src="//shop.bidcms.com/store/statics/images/icon_order.png" style="width:2.2rem;" /><view>全部订单</view><text class="tagspan nb">99+</text></view></view>
+	                <view><view bindtap="goUrl" data-url=""><image mode="widthFix" src="//shop.bidcms.com/store/statics/images/icon_pay.png" style="width:2.2rem;" /><view>待付款</view><text class="tagspan nb">99+</text></view></view>
+	                <view><view bindtap="goUrl" data-url=""><image mode="widthFix" src="//shop.bidcms.com/store/statics/images/icon_send.png" style="width:2.5rem;" /><view>已发货</view><text class="tagspan nb">99+</text></view></view>
+	                <view><view bindtap="goUrl" data-url=""><image mode="widthFix" src="//shop.bidcms.com/store/statics/images/icon_return.png" style="width:2.2rem;" /><view>退换货</view><text class="tagspan nb">99+</text></view></view>
+	            </view>
+	        </view>
+			<view class="mianad">
+				<view bindtap="goUrl" data-url="#"><image mode="widthFix" src="https://shop.bidcms.com/store/statics/images/user/ad.png" width="100%" /></view>
+			</view>
+			<view class="mainlist showUser">
+				<view>
+					<block wx:if="{{content.showPoint}}">
+					<view><view bindtap="goUrl" data-url="?con=user&act=points" class="icon_jf">我的积分<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showCoupon}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yhq">我的优惠券<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showRecharge}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_zhcz">账户充值<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showWithdraw}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yetx">余额提现<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showCollection}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yscsp">已收藏商品<text class="tagspan"></text></view></view>
+					</block>
+				</view>
+				<view>
+					<block wx:if="{{content.showModify}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_xgzl">修改资料<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showAddres}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_dzgl">地址管理<text class="tagspan"></text></view></view>
+					</block>
+				</view>
+				<view>
+					<block wx:if="{{content.showPrivilege}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_hydj">会员等级与特权<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showInteraction}}">
+					<view><view bindtap="goUrl" data-url="plugins/activity/index.php" class="icon_hyhd">福利社<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.showMyFriend}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_wdhy">我的朋友<text class="tagspan"></text></view></view>
+					</block>
+				</view>
+			</view>
+			<view class="mainlist showFenxiao">
+				<view>
+					<block wx:if="{{content.show_fxSubject}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_jf">分销专题<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_fxProduct}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yhq">分销产品<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_myAgent}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_zhcz">我的分销商<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_myUser}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yetx">我的会员<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_fxOrder}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yfkdd">分销订单<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_myCommission}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_dpjsp">我的佣金<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_monthRank}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yscsp">上月佣金排行<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_myStore}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yscsp">店中店<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_qrcode}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yscsp">二维码<text class="tagspan"></text></view></view>
+					</block>
+					<block wx:if="{{content.show_highLevel}}">
+					<view><view bindtap="goUrl" data-url="#" class="icon_yscsp">我的上级<text class="tagspan"></text></view></view>
+					</block>
+				</view>
+			</view>
+
+		</view>
+		<view class="mlogin_but" style="margin-top:30px;"><view bindtap="goUrl" data-url="/mobile/?con=user&act=logout">退出登录</view>
+	    </view>
+	</view>
+</template>
+
+<template name="tpl_diy_con_typeUserCenter_style2">
+	<view class="membersbox">
+		<view class="u-id-s2-top">
+	        <view class="infoPanel">
+				<view class="avatar" bindtap="goUrl" data-url="store/m.php?con=user&act=profile" style="background-image:url({{userInfo.avatarUrl}})"></view>
+				<view class="userinfo">
+	                <view class="nickname">{{userInfo.nickName}}
+					<block wx:if="{{content.showLevel}}">（{{content.customer.level}}）</block></view>
+	                <block wx:if="{{content.showID}}">
+	                	<view>ID：{{content.customer.id}}</view>
+                	</block>
+	                <view>注册时间：{{content.customer.updatetime}}</view>
+	            </view>
+
+	            <view bindtap="goUrl" data-url="store/m.php?con=user&act=mail" class="gotoMail"><span class="num">{{content.customer_count.mail}}</span></view>
+	        </view>
+	        <block wx:if="{{content.showPoint}}">
+	        <view class="accountPanel clearfix">
+	            <span class="item fl">余额：￥{{content.customer_count.amount}}</span>
+	            <span class="item fl">积分：{{content.customer_count.point}}</span>
+	            <view bindtap="goUrl" data-url="plugins/checkin/index.php" class="fr btn-sign">会员签到</view>
+	        </view>
+	        </block>
+	    </view>
+
+	    <view class="u-id-s2-nav clearfix">
+	        <view bindtap="showTab" data-val="1" class="link tab {{isShow==1?'cur':''}}">会员中心</view>
+			<block wx:if="{{content.customer.is_agent==1}}">
+			<view bindtap="showTab" data-val="2" class="link tab {{isShow==2?'cur':''}}">分销中心</view>
+			</block>
+			<block wx:else>
+			<view bindtap="goUrl" data-url="store/m.php?con=agent&act=apply" class="link">成为分销商</view>
+			</block>
+	    </view>
+
+	    <view class="u-id-s2-links clearfix">
+	        <view bindtap="goUrl" data-url="/pages/order/index?status=all" class="link">
+	            <i class="icon-links icon1_1"></i>
+	            <span class="title">全部订单</span>
+	        </view>
+	        <view bindtap="goUrl" data-url="/pages/order/index?status=0" class="link">
+	            <i class="icon-links icon1_2"></i>
+	            <span class="title">待付款</span>
+	        </view>
+	        <view bindtap="goUrl" data-url="/pages/order/index?status=2" class="link">
+	            <i class="icon-links icon1_3"></i>
+	            <span class="title">已发货</span>
+	        </view>
+	        <view bindtap="goUrl" data-url="/pages/order/index?status=-4" class="link">
+	            <i class="icon-links icon1_4"></i>
+	            <span class="title">退换货</span>
+	        </view>
+	    </view>
+		<block wx:if="{{content.ads.length>0}}">
+	    <view class="u-id-s2-adimg">
+			<swiper interval="3000" duration="1000">
+				
+				<block wx:for="{{content.ads}}" wx:for-item="item" wx:for-index="index" wx:key>
+					<swiper-item>
+					<view bindtap="goUrl" style="position:relative;height:100%;" data-url="{{ item.link }}" id="{{item.cid}}">
+						<image src="{{item.pic}}" mode="widthFix" style="width:100%;"/>
+						<view style="padding-left:10px;position:absolute;bottom:0px;left:0px;color:#fff;height:1.5rem;line-height:1.5rem;background-color:#000;opacity:0.6;width:100%;">{{item.showtitle}}</view>
+					</view>
+					</swiper-item>
+				</block>
+			</swiper>
+			
+	    </view>
+		
+		</block>
+	    <view class="u-id-s2-actions clearfix" wx:if="{{isShow==1}}">
+	    	<block wx:if="{{content.showPoint}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=user&act=points" class="action">
+		            <span class="icon-action icon1_1"></span>
+		            <span class="title">我的积分</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.showCoupon}}">
+	    		<view bindtap="goUrl" data-url="plugins/discount/index.php" class="action">
+		            <span class="icon-action icon1_2"></span>
+		            <span class="title">我的优惠券</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.showWithdraw}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=user&act=balance" class="action">
+		            <span class="icon-action icon1_4"></span>
+		            <span class="title">我的余额</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.showCollection}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=user&act=collect" class="action">
+		            <span class="icon-action icon1_7"></span>
+		            <span class="title">已收藏商品</span>
+		        </view>
+    		</block>
+				<block wx:if="{{content.showPrivilege}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=user&act=rank" class="action">
+		            <span class="icon-action icon1_9"></span>
+		            <span class="title">等级与权限</span>
+		        </view>
+    		</block>
+			<block wx:if="{{content.showInteraction}}">
+	    		<view bindtap="goUrl" data-url="plugins/activity/index.php" class="action">
+		            <span class="icon-action icon1_12"></span>
+		            <span class="title">福利社</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.showModify}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=user&act=profile" class="action">
+		            <span class="icon-action icon1_10"></span>
+		            <span class="title">修改资料</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.showAddress}}">
+	    		<view bindtap="goUrl" data-url="/pages/address/index" class="action">
+		            <span class="icon-action icon1_11"></span>
+		            <span class="title">地址管理</span>
+		        </view>
+    		</block>
+	  </view>
+	  <view class="u-id-s2-actions clearfix" wx:if="{{isShow==2}}">
+	    	<block wx:if="{{content.show_fxSubject}}">
+	    		<view bindtap="goUrl" data-url="plugins/invite/index.php" class="action">
+		            <span class="icon-action icon2_1"></span>
+		            <span class="title">邀请好友</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.show_fxProduct}}">
+	    		<view bindtap="goUrl" data-url="/pages/list/index" class="action">
+		            <span class="icon-action icon2_2"></span>
+		            <span class="title">分销产品</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.show_myUser}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=agent&act=fans" class="action">
+		            <span class="icon-action icon2_5"></span>
+		            <span class="title">我的会员</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.show_fxOrder}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=agent&act=order" class="action">
+		            <span class="icon-action icon2_4"></span>
+		            <span class="title">分销订单</span>
+		        </view>
+    		</block>
+    		<block wx:if="{{content.show_myCommission}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=agent&act=commission" class="action">
+		            <span class="icon-action icon2_9"></span>
+		            <span class="title">我的佣金</span>
+		        </view>
+    		</block>
+				<block wx:if="{{content.show_myStore}}">
+	    		<view bindtap="goUrl" data-url="store/m.php?con=agent&act=store" class="action">
+		            <span class="icon-action icon2_11"></span>
+		            <span class="title">店中店</span>
+		        </view>
+    		</block>
+			</view>
+	</view>
+</template>

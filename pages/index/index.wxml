@@ -1,0 +1,31 @@
+<!--页面 begin-->
+<import src="/pages/template/lmodules.wxml"/>
+<import src="/pages/template/pmodules.wxml"/>
+<view class="modulePadding{{pages.page.hasMargin}}" style="background-color:{{pages.page.backgroundColor}}">
+<block wx:for="{{pages.PModules}}" wx:for-item="item" wx:for-index="index" wx:key="">
+	<template is="tpl_diy_con_{{item.type}}" data="{{...item,userInfo}}"/>
+</block>
+<block wx:for="{{pages.LModules}}" wx:for-item="item" wx:for-index="index" wx:key="">
+	<block wx:if="{{item.type==1 || item.type==18}}">
+		<template is="tpl_diy_con_{{item.type}}" data="{{...item,wxParseData,userInfo}}"/>
+	</block>
+	<block wx:elif="{{item.type==19}}">
+		<template is="tpl_diy_con_{{item.type}}" data="{{...item,currentIndex,userInfo}}"/>
+	</block>
+	<block wx:else>
+		<template is="tpl_diy_con_{{item.type}}" data="{{...item,userInfo}}"/>
+	</block>
+	
+</block>
+</view>
+<!--页面 end-->
+<!--底部 begin-->
+<import src="/pages/template/bottom.wxml"/>
+<template is="bottom"/>
+<!--底部 end-->
+<!--底部 begin-->
+<import src="/pages/template/footer.wxml"/>
+<template is="footer" data="{{ footerNav }}"/>
+<!--底部 end-->
+<import src="/pages/template/login.wxml"/>
+<template is="login" data="{{ userInfo }}"/>

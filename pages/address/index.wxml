@@ -1,0 +1,17 @@
+<view class="list">
+    <radio-group class="radio-group" catchchange="radioChange">
+        <view wx:for="{{allAddress}}" wx:key="{{item.address_id}}" class="item">
+                <radio  value="{{item.address_id}}" checked="{{item.is_default_address == 1}}"/>
+                <view class="right" catchtap="addto" data-id="{{item.address_id}}">
+                    <text class="h1">{{item.name}}</text>
+                    <text class="p">{{item.address}}</text>
+                    <text class="arrow" ></text>
+                </view>
+        </view>
+    </radio-group>
+    <view class="item addto" bindtap="addrss">
+        <text class="lable">添加新地址</text>
+        <text class="arrow"></text>
+    </view>
+    
+</view>

@@ -1,0 +1,130 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="header">
+	<view class="fill-height layout align-center">
+		<navigator url="/pages/index/index" open-type="reLaunch" class="header-btn fl"><text class="iconfont icon-hometab"></text></navigator>
+		<view class="placeholder"></view>
+		<button class="header-btn share-btn fr" open-type="share"><text class="iconfont icon-share1"></text></button>
+	</view>
+</view>
+<view style="background-color:#f5f5f5;">
+    <scroll-view scroll-Y="true" scroll-X="false"> 
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}"  duration="{{duration}}" >
+            <block wx:for="{{goods.pictures}}" wx:for-item="item" wx:key="">
+                <swiper-item >
+					<view style="width:100%;background-image:url({{item}});height:100%;background-size:contain;background-repeat:no-repeat;background-position:center top;"></view>
+                </swiper-item>
+            </block>
+        </swiper>
+		<view class="mdetail_name">
+			<view class="title">{{goods.title}}</view>
+			<view class="keyword">{{goods.slogan}}</view>
+			<!-- 商品试用 start -->
+			<view class="clearfix">
+				<view class="price fl">
+					<text class="symbol">¥</text>
+					<text class="number">{{price}}</text>
+					<text class="status">抢购</text>
+				</view>
+				<view class="fr" style="padding-top:6px;"><image src="../../images/ic_productdetails_income.png" style="width:40px;height:40px;"  data-val="{{goods.commission}}" bindtap="showIncome"/></view>
+			</view>
+			<view class="otherinfo clearfix">
+				<view>原价：<text class="oprice">¥{{original_price}}</text></view>
+			</view>
+			<view class="otherinfo clearfix">
+				<view wx:if="{{goods.setting.hide_stock==0}}">库存:<text>{{goods.num}}</text></view>
+				<view wx:if="{{goods.setting.is_show_sale==1}}">销量:<text>{{goods.sale_num}}</text></view>
+			</view>
+			<!-- 商家信息 -->
+			
+			<view class="members_con">
+				<view class="modulePadding">
+						<view class="" style="width: 100%;vertical-align: top;margin: 0px 1px 0px 0;font-size: 0;position: relative;font-weight: 400;text-decoration: none;-ms-text-size-adjust: none;-webkit-text-size-adjust: none;text-size-adjust: none;">
+							<view class="" style="overflow: hidden;padding: 0.8rem 0px;position:relative;">
+								<view style="float:left;width:3rem;text-align:center;"><image src="{{goods.store.logo}}" style="width:2rem;height:2rem;"/></view>
+								<view class="" style="width: 70%;float:left;">
+									<view class="" style="font-weight: 400;font-size: 1rem;">{{goods.store.merchantName}}</view>
+									<view style="font-size:0.8rem;color: #8c8c8c;">点击右侧按钮咨询店主，电话：{{goods.store.phone}}</view>
+								</view>
+								<view style="position:absolute;top:1.2rem;right:0.6rem;">
+									<button style="width:2rem;height:2rem;background-image:url(//shop.bidcms.com/store/data/widget/22/phone.png);background-repeat:no-repeat;background-size:cover;border:0px;float:left;" bindtap="goPhone" plain="true" data-phone="{{goods.store.phone}}"></button>
+									<button style="width:2rem;height:2rem;background-image:url(//shop.bidcms.com/store/data/widget/22/weixin.png);background-repeat:no-repeat;background-size:cover;border:0px;float:left;" open-type="contact" plain="true"></button>
+								</view>
+							</view>
+						</view>
+				</view>
+			</view>
+			<!-- 详情页显示服务承诺 -->
+			<view class="shop-server"></view>                
+			
+		</view>
+		<view class="pleaseSelect">
+			
+				<picker class="pleaseSelect-con"  bindchange="bindPickerChange" value="{{index}}" range="{{goods_arr}}">
+					<view class="taga j-openPopupSKU picker">
+					  <text style="font-size:0.8rem;color:#484848;">选择规格</text>{{goods_arr[index]}}
+					  <text class="iconfont icon-more"></text>
+					</view>
+				</picker>
+		</view>
+		<view class="pleaseSelect">
+				<view style="width:90%;margin:auto;height:2rem;line-height:2rem;">
+					<text style="font-size:0.8rem;color:#484848;width:30%;float:left;">购买数量</text> 
+					<view class="footer_select"><label id="reduce" bindtap="buyCount">-</label> <text>{{buyNum}}</text>  <label id="add" bindtap="buyCount" data-max="{{goods.quota>0?goods.quota:goods.num}}">+</label></view>
+				</view>
+		</view>
+		<view class="shopInfo">
+			<view class="shop_action">
+				<navigator url="/pages/list/index" class="check_allgoods"><text class="iconfont icon-content"></text>查看所有商品</navigator>
+				<navigator url="/pages/index/index" class="intoShop"><text class="iconfont icon-hometab"></text>进店逛逛</navigator>
+			</view>
+		</view>
+		<view class="pleaseSelect">
+			<view style="width:90%;margin:auto;height:2rem;line-height:2rem;" bindtap="goUrl" data-url="?con=item&act=getContent&id={{goods.id}}&shopid={{goods.shop_id}}">
+				<text style="font-size:0.8rem;color:#484848;width:30%;float:left;">商品详情</text> 
+				<text style="float:right;font-size:0.6rem;color:#888;">建议WiFi下查看>></text>
+			</view>
+		</view>
+		<view class="pleaseSelect">
+			<import src="/pages/template/comment.wxml"/>
+			<view style="width:90%;margin:auto;height:2rem;line-height:2rem;">
+				<text style="font-size:0.8rem;color:#484848;width:30%;float:left;">用户评价({{comments.length}})</text> 
+				<text style="float:right;font-size:0.6rem;color:#888;">98.4%满意</text>
+			</view>
+			<view class="comment-view space-top">
+			  <view  class="comment-box" wx:if="{{comments.length>0}}" >
+				<block wx:for="{{comments}}" wx:for-item="item" wx:key="">
+				<view style="border-bottom: 1px solid #e5e5e5;padding: 20px 0;margin: 0 10px;"><view style="overflow: hidden;margin-bottom: .8em;color: #999;margin-top: 5px;"><view style="float: left;"><text style="nick">匿名</text></view><text style="float: right;">{{item.updatetime}}</text></view><view style="margin: 0;padding: 0;font-size: 14px;word-wrap: break-word;line-height:20px;">{{item.content}}</view><view style="position: relative;margin-top: 5px;background-color: #f0f0f0;padding: 8px;font-size: 13px;border-radius: 5px;line-height:20px;" wx:if="{{item.reply && item.reply!=''}}">掌柜回复:{{item.reply}}</view><view style="color: #999;margin-top: 5px;padding: 0;list-style: none;"></view><view style="overflow: hidden;margin-top: 5px;list-style: none;padding: 0;" wx:if="{{item.imglist.length>0}}"><block wx:for="{{item.imglist}}" wx:for-item="thumb" wx:key=""><view bindtap="previewImg" data-list="{{item.imglist}}" data-src="{{thumb}}" style="width: 55px;height: 55px;float: left;margin: 0 .48em .5em 0;background-color: #fff;display: -webkit-box;-webkit-box-aviewgn: center;-webkit-box-pack: center;background-size:contain;background-repeat:no-repeat;background-image:url({{thumb}})"></view></block></view></view>
+				</block>
+			   </view>
+			   <view style="height:35px;line-height:35px;text-align:center;" bindtap="getComment">{{loadMore}}</view>
+			</view>
+		</view>
+	</scroll-view>
+	
+    <view class="footer">
+	   
+      <view class="footer_btn">
+        <navigator url="/pages/shoppingcar/index" class="cart"><image src="/images/gouwuche.png"/></navigator>
+		    <text id="addCar" bindtap="buyNow" data-max="{{goods.quota}}">加入购物车</text><text bindtap="buyNow">立即购买</text>
+      </view>
+    </view>
+</view>
+
+<view class="page dialog js_show" style="position:absolute;top:0;left:0;right:0;bottom:0;display:{{income>0?'block':'none'}}">
+    <view id="dialogs">
+        <!--BEGIN dialog1-->
+        <view class="js_dialog" id="iosDialog1" style="opacity: 1;">
+            <view class="weui-mask" style="position: fixed;z-index: 1000;top: 0;right: 0;left: 0;bottom: 0;background: rgba(0, 0, 0, 0.6);"></view>
+            <view class="weui-dialog" style="position: fixed;z-index: 5000;width: 80%;max-width: 300px;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);background-color: #FFFFFF;text-align: center;border-radius: 3px;overflow: hidden;">
+                <view class="weui-dialog__hd" style="padding: 1.3em 1.6em 0.5em;"><text class="weui-dialog__title" style="font-weight: 400;font-size: 18px;">本商品收益</text></view>
+                <view class="weui-dialog__bd" style="padding: 0 1.6em 0.8em;font-size: 2rem;line-height:2rem;word-wrap: break-word;word-break: break-all;color: #808080;">￥{{income}}</view>
+                <view class="weui-dialog__ft" style="position: relative;line-height: 48px;font-size: 18px;display: -webkit-box;display: -webkit-flex;display: flex;">
+                    <button class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeIncome" plain="true" style="display: block;flex: 1;color: #353535;position: relative;border:none;">关闭</button>
+                    <button open-type="share" class="weui-dialog__btn weui-dialog__btn_primary" plain="true" style="display: block;flex: 1;color: #09BB07;border:none;position: relative;">确定</button>
+                </view>
+            </view>
+        </view>
+        <!--END dialog1-->
+    </view>
+</view>

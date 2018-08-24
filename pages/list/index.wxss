@@ -1,0 +1,144 @@
+
+.mlist_nav {
+    width: 100%;
+    border: 1px solid #eee;
+    border-right: 0;
+    overflow: hidden;
+    background-color: #FFF;
+    padding: 0;
+    margin-top: 0;
+    display: flex;
+}
+.mlist_nav text.cur {
+    color: #FF8F09;
+    border-bottom: 2px solid #FF8F09;
+}
+.mlist_nav text {
+    display: block;
+    color: #676767;
+    font-size: 14px;
+    padding: 13px 0;
+    border-bottom: 2px solid #FFF;
+    margin: 0;
+    text-align: center;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    flex:1;
+}
+.mlist_nav text:nth-child(2){
+    margin-right: 10px;
+    background: url(//shop.bidcms.com/store/statics/images/list1.png) right no-repeat;
+    background-size: 8px 12px;
+}
+.mlist_nav text:nth-child(3), .mlist_nav text:nth-child(4){
+    margin-right: 10px;
+    background: url(//shop.bidcms.com/store/statics/images/list2.png) right no-repeat;
+    background-size: 8px 9px;
+}
+.members_search{
+  width:98%;
+  margin:10px auto;
+}
+.loading{
+  height:2rem;
+  line-height: 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+.list{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #FFF; 
+  font-size: 16px;
+  white-space: nowrap;
+  height:90rpx;
+  line-height: 77rpx;
+}
+.list .item {
+  text-align: center;
+  margin:0 36rpx;
+  display: inline-block;
+}
+.list .action {
+  border-bottom: 2px solid #F5B223;
+  color:#F5B223;
+}
+
+
+/*
+ * 三种模式商品列表
+ * [备注：]库存销量,加入购物车按钮，市场价默认全部显示，如需隐藏/显示在对应图片列表代码中设置即可
+ */
+.product-list{}
+.product-list .tagul{ overflow: hidden; width:100%;}
+.product-list .tagul .tagli{box-sizing: border-box;border-bottom:1px solid #f4f4f4;}
+
+.product-div{background:#fff;  position: relative;  overflow: hidden;}
+.product-div-link{ position:.tagabsolute;  left: 0; right: 0; top: 0; bottom: 0; z-index: 1;}
+/*商品列表购物车按钮*/
+.product-cart{text-align: center; position:.tagabsolute;}
+.icon-flow-cart{ background:#1CBB7F; border-radius: 50%;}
+.icon-minus-cart{ background:#CCC; border-radius: 50%;}
+.icon-flow-cart .tagi.icon-gouwuche{color:#fff; }
+.product-div .tagimg{width:100%; display: block;    max-width: 294px;
+    max-height: 294px;}
+.product-text .tagh4{ display: block;overflow: hidden;}
+.product-text .tagp{padding-top:.6rem; padding-bottom:.4rem;}
+.product-text .p-t-remark{color:#999;padding-bottom:0rem;}
+
+/*
+ * 商品列表1－最大化图片浏览
+ * 在.product-list处加入.product-list-big即可实现
+ */
+
+.product-list-big{padding:0.5rem 1rem;}
+.product-list-big .tagul .tagli{width:100%; padding:.5rem 0;}
+
+.product-list-big .product-text{padding:1.4rem;}
+.product-list-big .tagh4{font-size:1.8rem; height:4.4rem;.tagline-height: 2.3rem;}
+
+.product-list-big .p-t-remark{padding-top:.8rem;font-size:1.5rem; display: none;/*隐藏库存销量*/}
+
+.product-list-big .p-price{font-size:2.3rem;}
+.product-list-big .p-price .tagsmall{font-size:1.6rem; margin-left:1rem}
+.product-list-big .icon-flow-cart{ right:1.4rem; bottom:1.4rem; width:3.6rem; height:3.6rem;.tagline-height:3.6rem;}
+.product-list-big .icon-flow-cart .icon-gouwuche{font-size:2.4rem;}
+/*small与medium.tagh4参数一致*/
+.product-list-medium .tagh4,.product-list-small .tagh4{font-size:1.65rem; height:3.8rem;.tagline-height: 1.9rem;}
+
+/*商品列表2－中等图片浏览默认*/
+.product-list-medium{padding:.2rem .4rem;}
+.product-list-medium .tagul .tagli{float:left; width:50%; padding:.2rem;}
+.product-list-medium .tagul .tagli:nth-child(2n-1){padding-right:0.2rem;}
+.product-list-medium .tagul .tagli:nth-child(2n){padding-left:0.2rem;}
+
+.product-list-medium .product-text{padding:.8rem;}
+
+.product-list-medium .p-t-remark{font-size:1.2rem; padding-top:.2rem; display: none;/*隐藏库存销量*/}
+
+.product-list-medium .p-price{font-size:1.8rem;}
+.product-list-medium .p-price .tagsmall{margin-left:.6rem; display:none;/*隐藏市场价*/}
+.product-list-medium .icon-flow-cart{ right:.6rem; bottom:.6rem;width:2.8rem; height:2.8rem;.tagline-height:2.8rem; display: none;/*隐藏商品列表购物按钮*/}
+.product-list-medium .icon-flow-cart .icon-gouwuche{font-size:1.8rem;}
+
+/*
+ * 商品列表3－最小化图片浏览
+ * 在.product-list处加入.product-list-small即可实现
+ */
+.product-list-small{padding:0 1px; margin-top:1px;}
+.product-list-small .tagul .tagli{width:98%;padding-left:1%;padding-right:1%;padding-bottom:0.5rem;margin-top:0.5rem;display:flex;}
+
+.product-list-small .product-img{text-align:left;width:20%;background-size:contain;background-repeat:no-repeat;background-position:center;}
+
+.product-list-small .product-text{width:76%;margin-left:3%;}
+.product-list-small .product-text .tagh4{font-size:0.9rem;height:auto;line-height:1.4rem;}
+.product-list-small .p-t-remark{ font-size:0.7rem;padding-top:0rem;}
+.product-list-small .p-price{color:#ff6600;margin-top:0.5rem;}
+.product-list-small .p-price .tagsmall{color:#ddd;margin-left:.6rem; font-size:0.6rem;text-decoration:line-through;}
+.product-list-small .product-cart{ right:0rem; bottom:0.6rem;}
+.product-list-small .product-cart input{height:2rem;width:2rem;text-align:center;}
+.product-list-small .icon-flow-cart{float:right;width:2rem; height:2rem;font-size:2rem;color:#fff; }
+.product-list-small .icon-minus-cart{float:left;width:2rem; height:2rem;font-size:2rem;color:#000; }

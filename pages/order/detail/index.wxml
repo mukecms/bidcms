@@ -1,0 +1,87 @@
+
+	<block wx:for="{{orderList}}" wx:for-item="item" wx:key="id">
+		<view class="mui-content">
+    <view class="mui-card">
+      <view class="mui-card-header mui-card-media">
+        <image src="http://shop.bidcms.com/store/statics/images/people.png"/>
+        <view class="mui-media-body">
+          Bidcms开源电商
+          <view class="tagp">交易时间 {{item.updatetime}}</view>
+        </view>
+      </view>
+      <view class="mui-card-content" >
+        <view class="mui-card-content-inner" style="padding-bottom:0px;">
+          <view style="text-align:center;margin-bottom:1rem;">付款金额<view style="font-size:2rem;padding-top:0.5rem;"><text style="font-size:1rem;">￥</text>{{item.payable}}</view></view>
+          <view class="goods-list" >
+            <block wx:for="{{item.goods}}" wx:for-item="citem">
+            <view class="mui-table-view" data-id="{{citem.id}}">
+              <view class="mui-table-view-cell mui-media" style="padding-left:0px;padding-right:0px;">
+                  <image class="mui-media-object mui-pull-left" src="{{citem.goods_thumb}}" />
+                  <view class="mui-media-body">
+                    {{citem.goods_name}}
+                    <view class="mui-ellipsis" style="color:#8f8f94;">{{citem.sku_name}}</view>
+                    <view style="color:#ff0000;">¥{{citem.current_price}} X {{citem.num}}</view>
+                  </view>
+                </view>
+            </view>
+            </block>
+          </view>
+          <block wx:if="{{item.pay_status==1}}">
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">支付编号 <text style="color: #333;">{{item.pay_id}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">支付时间 <text style="color: #333;">{{item.pay_time}}</text></view>
+          </block>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">订单编号 <text style="color: #333;">{{item.order_sn}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">交易状态 <text style="color: #333;">{{item.order_status_txt}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #ff6600;">优惠信息 <text>{{item.coupon_name}} ￥{{item.coupon_price}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">{{item.content}}</view>
+        </view>
+      </view>
+      <view class="mui-card-content" >
+        <view class="mui-card-content-inner" style="padding-bottom:0px;">
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">运费信息 <text style="color: #333;">￥{{item.post_price}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">收 货 人 <text style="color: #333;">{{item.receiver_name}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">手机号码 <text style="color: #333;">{{item.receiver_mobile}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">收货时间 <text style="color: #333;">{{item.receiver_time}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">收货地址 <text style="color: #333;">{{item.address}}</text></view>
+        </view>
+      </view>
+      <block wx:if="{{item.express_id>0}}">
+      <view class="mui-card-content" >
+        <view class="mui-card-content-inner" style="padding-bottom:0px;">
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">发货人 <text style="color: #333;">{{item.express_name}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">发货单号 <text style="color: #333;">{{item.express_no}}</text></view>
+          <view style="font-size: 14px;margin-top: 0; margin-bottom: 10px;color: #8f8f94;">发货时间 <text style="color: #333;">{{item.express_time}}</text>
+          </view>
+        </view>
+      </view>
+      </block>
+      
+      <view class="mui-card-footer"  wx:if = "{{item.order_status == 0}}">
+        <view class="mui-card-link"><button id="{{item.id}}" id="{{item.id}}" bindtap="cancelOrder" size="mini">取消订单</button></view>
+				<view class="mui-card-link"><button type="primary"  id="{{item.id}}"  size="mini" bindtap="pay">继续支付</button></view>
+      </view>
+      <view class="mui-card-footer"  wx:if = "{{item.order_status == 2}}">
+        <view class="mui-card-link"></view>
+        <view class="mui-card-link"><button type="primary"  id="{{item.id}}"  size="mini" bindtap="confirmOrder">确认收货</button></view>
+      </view>
+      <view class="mui-table-view">
+        <view class="mui-table-view-cell" bindtap="goPhone" data-phone="13001199690">
+            联系商家<text class="arrow"></text>
+        </view>
+        <block  wx:if = "{{item.order_status == 3}}">
+        <view class="mui-table-view-cell" bindtap="goUrl" data-url="store/m.php?con=order&act=comment&id={{item.id}}">
+            评价<text class="listtag">未评价</text><text class="arrow"></text>
+        </view>
+        </block>
+        <block  wx:if = "{{item.express_no != ''}}">
+        <view class="mui-table-view-cell" data-url="store/m.php?con=order&act=express&id={{item.express_no}}" bindtap="goUrl" >
+            查询物流信息<text class="arrow"></text>
+        </view>
+        </block>
+        <view class="mui-table-view-cell" bindtap="goUrl" data-url="store/m.php?con=order&act=help">
+            常见问题<text class="arrow"></text>
+        </view>
+      </view>
+    </view>
+  </view>
+	</block>

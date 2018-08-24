@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<scroll-view scroll-x="ture"  style="width: 100%" class="list">
+    <block wx:for="{{goodsData}}" wx:for-item="item" wx:key="id">
+            <view class="item {{item.id==catId?'action':''}}" data-id="{{item.id}}" bindtap="getCate">{{item.title}}</view>
+    </block>
+</scroll-view>
+<view class="members_search">
+  <input type="text" bindinput="bindKeywordInput" value="{{searchKeyword}}" placeholder="商品搜索：请输入商品关键字"/>
+  <image class="search-btn" bindtap="keywordSearch" src="//shop.bidcms.com/store/statics/images/hui3.png"></image>
+</view>
+<view class="mlist_nav g-box">
+  <text class="order_type {{orderBy==''?'cur':''}}" bindtap="orderBy" data-val="">默认</text>
+  <text class="order_type {{orderBy=='price_asc' || orderBy=='price_desc'?'cur':''}}" bindtap="orderBy" data-val="price_asc">价格</text>
+  <text class="order_type {{orderBy=='sales_desc'?'cur':''}}" bindtap="orderBy" data-val="sales_desc">销量</text>
+  <text class="order_type {{orderBy=='time_desc'?'cur':''}}" bindtap="orderBy" data-val="time_desc">新品</text>
+</view>
+ <scroll-view scroll-y="true" style="height:500px;" lower-threshold="50" bindscrolltolower="loadMore">
+       <block wx:for="{{goodsList}}" wx:for-item="goods" wx:key="id">
+        <view class=" product-list product-list-small">
+			<view class="tagul">
+				<view class="tagli product-view" bindtap="goUrl" data-url="/pages/detail/index?id={{goods.goods_id}}&bid={{bidcms_id}}">
+					<view class="product-img" style="background-image:url({{goods.pic}});"></view>
+					<view class="product-text">
+						<view class="tagh4">{{goods.title}}</view>
+						<view class="tagp p-t-remark">{{goods.keywords}}</view>
+						<view class="p-price"><text>￥{{goods.price}}</text><text class="tagsmall">￥{{ goods.original_price}}</text></view>
+					</view>
+				</view>
+			</view>
+		</view>
+      </block>
+      <view class="loading" bindtap="loadMore" hidden="{{!searchLoading}}">{{loadingText}}</view>  
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">暂无更多内容了</view>  
+ </scroll-view>
+
+<!--导航图标 end-->
+<!--底部 begin-->
+<import src="/pages/template/bottom.wxml"/>
+<template is="bottom"/>
+<!--底部 end-->
+<!--底部 begin-->
+<import src="/pages/template/footer.wxml"/>
+<template is="footer" data="{{ footerNav }}"/>
+<!--底部 end-->
+	

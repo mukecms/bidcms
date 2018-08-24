@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cate/index",
+    "pages/order/index",
+    "pages/list/index",
+    "pages/detail/index",
+    "pages/shoppingcar/index",
+    "pages/address/index",
+    "pages/address/addto/index",
+    "pages/settlement/index",
+    "pages/user/index",
+    "pages/logs/logs",
+    "pages/web/web",
+    "pages/order/detail/index",
+    "pages/pay/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序加载中",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": true,
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "functionalPages": true
+}

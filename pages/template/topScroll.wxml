@@ -1,0 +1,10 @@
+<template name="topScroll"> 
+    <swiper class="lunbo" id="lunbo" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bander}}" wx:key="item.id">
+            <swiper-item>
+	      <image mode="aspectFill" wx:if="{{item.cid != 0}}" src="{{item.image}}" bindtap="todetail" id="{{item.cid}}" class="slide-image"/>
+	      <image mode="aspectFill" wx:else src="{{item.image}}" id="{{item.cid}}" class="slide-image"/>
+	    </swiper-item>
+        </block>
+    </swiper>
+</template>
